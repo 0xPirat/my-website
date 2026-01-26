@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kinetic Flow</title>
+  <meta name="description"
+    content="High-end, high-performance websites for small and medium businesses. Precision design, clean engineering, and a premium digital presence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="matrix-intro" aria-hidden="true">
+    <canvas id="matrix-canvas"></canvas>
+    <div class="matrix-sheen"></div>
+  </div>
+  <div class="site-spotlight" aria-hidden="true"></div>
+  <div class="bg-noise" aria-hidden="true"></div>
+  <div class="bg-beam beam-1" aria-hidden="true"></div>
+  <div class="bg-beam beam-2" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav">
+      <div class="brand">Johannes Benedict</div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#work">Proof</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="btn btn-primary">Request a project</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-curtain" aria-hidden="true"></div>
+      <div class="hero-stage" data-parallax>
+        <div class="hero-content" data-depth="0.18">
+          <div class="eyebrow">Business Presence</div>
+          <h1 class="hero-title">Show your business [to] the world</h1>
+          <p class="lead">
+            A high‑end digital reveal that looks simple, elite, and unmistakably professional.
+          </p>
+          <div class="hero-cta">
+            <button class="btn btn-primary">Request a project</button>
+            <button class="btn btn-ghost">See work approach</button>
+          </div>
+          <div class="trust-strip">
+            <span>Credibility</span>
+            <span>Precision</span>
+            <span>Performance</span>
+            <span>Premium perception</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true" data-depth="0.34"></div>
+      </div>
+      <div class="hero-halo" aria-hidden="true"></div>
+    </section>
+
+    <section class="section problem">
+      <div class="section-inner">
+        <h2>Most SME websites are functional. Few are impressive.</h2>
+        <p>
+          Your website is your first sales conversation. It should look high-value, load fast,
+          and communicate trust in seconds.
+        </p>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>Services built for credibility and growth</h2>
+          <p>Precision design, technical depth, and a business-first approach.</p>
+        </div>
+        <div class="grid three">
+          <article class="service-card reveal">
+            <h3>Web Design & Visual System</h3>
+            <p>Premium layout, typography, and motion — tailored to your brand.</p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Development & Performance</h3>
+            <p>Fast, responsive, accessible. Built to scale with your business.</p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Conversion & Trust</h3>
+            <p>Clear positioning, credible signals, and purposeful CTAs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="process">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>A clear, low-friction process</h2>
+        </div>
+        <div class="grid four">
+          <div class="step reveal">
+            <div class="step-number">01</div>
+            <h3>Discovery</h3>
+            <p>Your goals, your audience, your edge.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step-number">02</div>
+            <h3>Design</h3>
+            <p>A visual system that feels premium and precise.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step-number">03</div>
+            <h3>Build</h3>
+            <p>Clean code, performance, and polish.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step-number">04</div>
+            <h3>Launch</h3>
+            <p>Production-ready, reliable, and measurable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section proof" id="work">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>Signals that move the needle</h2>
+        </div>
+        <div class="grid two">
+          <div class="proof-card reveal">
+            <div class="proof-value">30%</div>
+            <p>More inbound inquiries after redesign</p>
+          </div>
+          <div class="proof-card reveal">
+            <div class="proof-value">&lt;1s</div>
+            <p>Target load time for a premium first impression</p>
+          </div>
+        </div>
+        <div class="proof-note">
+          Results depend on industry and positioning, but the goal is always the same: credible,
+          premium perception.
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta" id="contact">
+      <div class="section-inner">
+        <div class="cta-panel">
+          <h2>If your business is serious, your website should be too.</h2>
+          <p>Tell me what you need. I’ll reply with a clear scope and timeline.</p>
+          <div class="cta-actions">
+            <button class="btn btn-primary">Request a project</button>
+            <button class="btn btn-ghost">Email a brief</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-text">Made by 0xPirat. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#">Imprint</a>
+      <a href="#">Privacy</a>
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
