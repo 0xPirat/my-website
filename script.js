@@ -3,7 +3,6 @@ const matrixIntro = document.querySelector('.matrix-intro');
 const matrixCanvas = document.getElementById('matrix-canvas');
 const heroStage = document.querySelector('[data-parallax]');
 const heroTitle = document.querySelector('.hero-title');
-const siteSpotlight = document.querySelector('.site-spotlight');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const glassCards = document.querySelectorAll('.service-card, .step, .proof-card');
 
@@ -136,7 +135,6 @@ reveals.forEach((el) => observer.observe(el));
 
 const parallaxLayers = heroStage ? heroStage.querySelectorAll('[data-depth]') : [];
 let parallaxRaf = null;
-let spotlightRaf = null;
 
 function handleParallax(event) {
   if (!heroStage || prefersReducedMotion) return;
@@ -166,28 +164,4 @@ function resetParallax() {
 if (heroStage && !prefersReducedMotion) {
   heroStage.addEventListener('mousemove', handleParallax);
   heroStage.addEventListener('mouseleave', resetParallax);
-}
-
-function handleSpotlight(event) {
-  if (!siteSpotlight || prefersReducedMotion) return;
-  if (!document.body.classList.contains('intro-complete')) return;
-  const x = (event.clientX / window.innerWidth) * 100;
-  const y = (event.clientY / window.innerHeight) * 100;
-
-  if (spotlightRaf) cancelAnimationFrame(spotlightRaf);
-  spotlightRaf = requestAnimationFrame(() => {
-    document.body.style.setProperty('--spot-x', `${x}%`);
-    document.body.style.setProperty('--spot-y', `${y}%`);
-    siteSpotlight.classList.add('spot-on');
-  });
-}
-
-function resetSpotlight() {
-  if (!siteSpotlight) return;
-  siteSpotlight.classList.remove('spot-on');
-}
-
-if (siteSpotlight && !prefersReducedMotion) {
-  window.addEventListener('mousemove', handleSpotlight);
-  window.addEventListener('mouseleave', resetSpotlight);
 }
