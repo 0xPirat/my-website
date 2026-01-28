@@ -8,6 +8,14 @@ Workflow skalierbar und professionell bleibt.
 **Verantwortung**
 - Geschäftsziele, Positionierung und Erfolgskriterien definieren.
 - Ziele in messbare Website-Ergebnisse übersetzen.
+s
+## Agent Runtime & Execution
+- Agents are executed via Anti-Gravity from the terminal.
+- Each agent runs in its own terminal session.
+- Agents must assume parallel execution.
+- Agents must not modify files outside their assigned scope.
+- Coordination happens via file ownership and git branches.
+
 
 **Entscheidungsbefugnis**
 - Letztes Wort bei Zielen, Zielgruppen-Definition und Priorisierung.

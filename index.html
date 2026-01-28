@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260127-3" />
 </head>
 
 <body>
@@ -25,20 +25,26 @@
   <div class="bg-beam beam-2" aria-hidden="true"></div>
 
   <header class="site-header">
+    <div class="header-video-bg" aria-hidden="true">
+      <video src="pictures/video.mp4" autoplay muted loop playsinline></video>
+    </div>
     <nav class="nav">
-      <div class="brand">Johannes Benedict</div>
+      <div class="brand">Kinetic Flow</div>
       <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#process">Process</a>
         <a href="#work">Proof</a>
         <a href="#contact">Contact</a>
       </div>
-      <button class="btn btn-primary">Request a project</button>
+      <button class="btn btn-primary"><span>Request a project</span></button>
     </nav>
   </header>
 
   <main>
     <section class="hero">
+      <div class="hero-video-bg" aria-hidden="true">
+        <video src="pictures/video.mp4" autoplay muted loop playsinline></video>
+      </div>
       <div class="hero-curtain" aria-hidden="true"></div>
       <div class="hero-stage" data-parallax>
         <div class="hero-content" data-depth="0.18">
@@ -48,8 +54,9 @@
             A high‑end digital reveal that looks simple, elite, and unmistakably professional.
           </p>
           <div class="hero-cta">
-            <button class="btn btn-primary">Request a project</button>
-            <button class="btn btn-ghost">See work approach</button>
+            <button class="btn btn-primary" type="button" data-link="work-approach.html" data-duration="520">
+              <span>See work approach</span>
+            </button>
           </div>
           <div class="trust-strip">
             <span>Credibility</span>
@@ -59,7 +66,9 @@
           </div>
         </div>
 
-        <div class="hero-visual" aria-hidden="true" data-depth="0.34"></div>
+        <div class="hero-visual" aria-hidden="true" data-depth="0.34">
+          <canvas class="hero-samurai-canvas" aria-hidden="true"></canvas>
+        </div>
       </div>
       <div class="hero-halo" aria-hidden="true"></div>
     </section>
@@ -146,6 +155,11 @@
           Results depend on industry and positioning, but the goal is always the same: credible,
           premium perception.
         </div>
+        <div class="proof-cta">
+          <button class="btn btn-primary btn-lg" type="button" data-link="work-approach.html">
+            <span>See work approach</span>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -155,8 +169,8 @@
           <h2>If your business is serious, your website should be too.</h2>
           <p>Tell me what you need. I’ll reply with a clear scope and timeline.</p>
           <div class="cta-actions">
-            <button class="btn btn-primary">Request a project</button>
-            <button class="btn btn-ghost">Email a brief</button>
+            <button class="btn btn-primary"><span>Request a project</span></button>
+            <button class="btn btn-ghost"><span>Email a brief</span></button>
           </div>
         </div>
       </div>
@@ -164,16 +178,20 @@
   </main>
 
   <footer class="site-footer">
-    <div class="footer-text">Made by 0xPirat. All rights reserved.</div>
-    <div class="footer-links">
-      <a href="#">Imprint</a>
-      <a href="#">Privacy</a>
-      <a href="#">Impressum</a>
-      <a href="#">Datenschutz</a>
+    <div class="footer-text">Made by Johannes Benedict. All rights reserved.</div>
+    <div class="footer-nav">
+      <div class="footer-group">
+        <div class="footer-title"></div>
+        <div class="footer-links">
+          <a href="impressum.html" data-link="impressum.html" data-duration="1000">Impressum</a>
+          <a href="datenschutz.html" data-link="datenschutz.html" data-duration="1000">Datenschutz</a>
+          <a href="privacy.html" data-link="privacy.html" data-duration="1000">Privacy</a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20260127-3"></script>
 </body>
 
 </html>

@@ -7,6 +7,7 @@
 ## Phase 2: Branding & Stil
 - Visuelle Richtung, Typografie und Farbsystem definieren
 - Motion-Prinzipien und Interaktionsrichtlinien festlegen
+- Hero-Curtain (Reveal-Vorhang) als benanntes Intro-Element dokumentieren
 
 ## Phase 3: UX / Struktur
 - Landingpage-Abschnitte und User-Flow planen
