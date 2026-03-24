@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs"
+  },
+  "dependencies": {
+    "gsap": "^3.14.2",
+    "three": "^0.183.2"
+  }
+}

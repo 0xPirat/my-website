@@ -4,160 +4,127 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Datenschutz - Kinetic Flow</title>
-  <meta name="description" content="Datenschutzerklaerung" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Datenschutz | buildIT</title>
+  <meta name="description" content="Datenschutzhinweise von buildIT." />
+  <script src="src/scripts/file-protocol-guard.js"></script>
+  <link rel="stylesheet" href="src/styles/main.css" />
 </head>
 
-<body class="no-intro">
-  <div class="matrix-intro" aria-hidden="true">
-    <canvas id="matrix-canvas"></canvas>
-    <div class="matrix-sheen"></div>
+<body>
+  <div class="site-bg" aria-hidden="true">
+    <div class="bg-orb bg-orb-a"></div>
+    <div class="bg-orb bg-orb-b"></div>
+    <div class="bg-grid"></div>
   </div>
-  <div class="bg-noise" aria-hidden="true"></div>
-  <div class="bg-beam beam-1" aria-hidden="true"></div>
-  <div class="bg-beam beam-2" aria-hidden="true"></div>
 
   <header class="site-header">
-    <nav class="nav">
-      <div class="brand">Johannes Benedict</div>
-      <div class="nav-links">
-        <a href="index.html#services">Services</a>
-        <a href="index.html#process">Process</a>
-        <a href="index.html#work">Proof</a>
-        <a href="index.html#contact">Contact</a>
+    <nav class="nav-wrap" aria-label="Hauptnavigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">buildIT</span>
+      </a>
+
+      <div class="nav-panel" id="site-nav">
+        <a href="index.html#warum-wir">Warum wir</a>
+        <a href="index.html#anfrage">Ablauf</a>
+        <a href="contact.html">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
       </div>
-      <a class="btn btn-primary" href="index.html#contact"><span>Request a project</span></a>
+
+      <a class="btn btn-primary btn-small nav-cta" href="contact.html">Kontaktiere uns</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Menue oeffnen</span>
+      </button>
     </nav>
   </header>
 
-  <main>
-    <section class="section approach-hero">
-      <div class="section-inner approach-hero-inner">
-        <div>
-          <div class="eyebrow">Datenschutz</div>
-          <h1 class="approach-title">Datenschutzerklaerung</h1>
-          <p class="approach-lead">
-            Nachfolgend finden Sie die Informationspflichten nach DSGVO. Bitte tragen Sie Ihre Daten
-            in die eckigen Klammern ein.
-          </p>
-        </div>
+  <main class="legal-main">
+    <section class="page-hero section-frame">
+      <div data-reveal>
+        <p class="eyebrow">Datenschutz</p>
+        <h1>Datenschutzhinweise fuer deine Website.</h1>
+        <p>Diese Seite ist als sauberes Grundgeruest gedacht und muss vor der Veroeffentlichung mit realen Angaben gefuellt werden.</p>
       </div>
     </section>
 
-    <section class="section approach-flow">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2>Hinweise zur Datenverarbeitung</h2>
-          <p>Diese Erklaerung gilt fuer die Website [Domain].</p>
-        </div>
-        <div class="grid two">
-          <article class="service-card reveal">
-            <h3>Verantwortliche Stelle</h3>
-            <p>
-              [Unternehmensname / Vor- und Nachname]<br />
-              [Strasse und Hausnummer]<br />
-              [PLZ, Ort]<br />
-              [Land]<br />
-              E-Mail: [E-Mail-Adresse]
-            </p>
-          </article>
-          <article class="service-card reveal">
-            <h3>Ihre Rechte</h3>
-            <p>
-              Auskunft, Berichtigung, Loeschung, Einschraenkung der Verarbeitung, Datenuebertragbarkeit,
-              Widerspruch sowie Beschwerde bei der Aufsichtsbehoerde.
-            </p>
-          </article>
-        </div>
-        <div class="grid two" style="margin-top: 24px;">
-          <article class="service-card reveal">
-            <h3>Zwecke & Rechtsgrundlagen</h3>
-            <p>
-              Bereitstellung der Website, Kommunikation, Vertragsanbahnung, Sicherheit.
-              Rechtsgrundlagen: Art. 6 Abs. 1 lit. b, f DSGVO. [Ergaenzen, falls z.B. Einwilligung]
-            </p>
-          </article>
-          <article class="service-card reveal">
-            <h3>Speicherdauer</h3>
-            <p>
-              Wir speichern personenbezogene Daten nur so lange, wie es fuer den jeweiligen Zweck
-              erforderlich ist oder gesetzliche Pflichten bestehen. [Details ergaenzen]
-            </p>
-          </article>
-        </div>
-        <div class="grid two" style="margin-top: 24px;">
-          <article class="service-card reveal">
-            <h3>Hosting</h3>
-            <p>
-              Hosting durch: [Anbieter]<br />
-              Serverstandort: [Land/Region]<br />
-              Auftragsverarbeitung: [Ja/Nein]
-            </p>
-          </article>
-          <article class="service-card reveal">
-            <h3>Kontaktformular / E-Mail</h3>
-            <p>
-              Wenn Sie uns kontaktieren, verarbeiten wir Ihre Angaben zur Bearbeitung der Anfrage.
-              Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO. [Optional: Speicherdauer]
-            </p>
-          </article>
-        </div>
-        <div class="grid two" style="margin-top: 24px;">
-          <article class="service-card reveal">
-            <h3>Cookies & Einwilligung</h3>
-            <p>
-              Wir setzen Cookies nur ein, wenn dies technisch notwendig ist oder Sie eingewilligt haben.
-              [Cookie-Banner/Tool, Einwilligungsverwaltung ergaenzen]
-            </p>
-          </article>
-          <article class="service-card reveal">
-            <h3>Analyse / Tracking</h3>
-            <p>
-              [Analytics-Tool, Anbieter, Zweck, Rechtsgrundlage, Speicherdauer, Opt-out-Link]
-              [Falls kein Tracking: \"Wir verwenden kein Tracking\"]
-            </p>
-          </article>
-        </div>
-        <div class="grid two" style="margin-top: 24px;">
-          <article class="service-card reveal">
-            <h3>Drittlanduebermittlung</h3>
-            <p>
-              [Falls Daten in Drittlender uebermittelt werden: Land, Garantien wie SCCs]
-              [Falls nein: \"Es erfolgt keine Drittlanduebermittlung\"]
-            </p>
-          </article>
-          <article class="service-card reveal">
-            <h3>Aufsichtsbehoerde</h3>
-            <p>
-              Zustaendige Behoerde: [Name, Anschrift, Website der Landesdatenschutzbehoerde]
-            </p>
-          </article>
-        </div>
+    <section class="page-section section-frame">
+      <div class="legal-grid">
+        <article class="legal-card page-card glass-card" data-reveal>
+          <h3>Verantwortliche Stelle</h3>
+          <p>
+            [Unternehmensname / Vor- und Nachname]<br />
+            [Strasse und Hausnummer]<br />
+            [PLZ, Ort]<br />
+            [Land]<br />
+            E-Mail: [E-Mail-Adresse]
+          </p>
+        </article>
+        <article class="legal-card page-card glass-card" data-reveal>
+          <h3>Rechte der betroffenen Personen</h3>
+          <ul>
+            <li>Auskunft, Berichtigung und Loeschung</li>
+            <li>Einschraenkung der Verarbeitung und Widerspruch</li>
+            <li>Beschwerde bei der zustaendigen Aufsichtsbehoerde</li>
+          </ul>
+        </article>
+        <article class="legal-card page-card glass-card" data-reveal>
+          <h3>Zwecke und Rechtsgrundlagen</h3>
+          <p>
+            Bereitstellung der Website, Bearbeitung von Kontaktanfragen, Sicherheitszwecke.
+            Rechtsgrundlagen: Art. 6 Abs. 1 lit. b und f DSGVO. Weitere Grundlagen bitte ergaenzen.
+          </p>
+        </article>
+        <article class="legal-card page-card glass-card" data-reveal>
+          <h3>Hosting und Verarbeitung</h3>
+          <p>
+            Hosting-Anbieter: [Anbieter]<br />
+            Serverstandort: [Ort / Land]<br />
+            Auftragsverarbeitung: [Ja / Nein]
+          </p>
+        </article>
+        <article class="legal-card page-card glass-card" data-reveal>
+          <h3>Kontaktformular und E-Mail</h3>
+          <p>
+            Angaben aus Kontaktanfragen werden zur Bearbeitung des Anliegens verarbeitet.
+            Details zu Speicherfristen und Rechtsgrundlage bitte konkret ergaenzen.
+          </p>
+        </article>
+        <article class="legal-card page-card glass-card" data-reveal>
+          <h3>Cookies, Analyse, Drittlaender</h3>
+          <ul>
+            <li>Cookie-Hinweis und Consent-Management ergaenzen</li>
+            <li>Analytics- oder Tracking-Tools konkret benennen oder verneinen</li>
+            <li>Drittlanduebermittlungen und Garantien ausweisen, falls vorhanden</li>
+          </ul>
+        </article>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-text">Made by 0xPirat. All rights reserved.</div>
-    <div class="footer-nav">
-      <div class="footer-group">
-        <div class="footer-title">Website</div>
-        <div class="footer-links">
-          <a href="impressum.html" data-link="impressum.html" data-duration="1000">Impressum</a>
-          <a href="datenschutz.html" data-link="datenschutz.html" data-duration="1000">Datenschutz</a>
-          <a href="privacy.html" data-link="privacy.html" data-duration="1000">Privacy</a>
-        </div>
-      </div>
+    <div>
+      <a class="brand brand-footer" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">buildIT</span>
+      </a>
+      <p class="footer-copy">Datenschutztexte muessen vor dem Livegang mit deinen echten Prozessen abgeglichen werden.</p>
     </div>
+
+    <div class="footer-links">
+      <a href="index.html#warum-wir">Warum wir</a>
+      <a href="index.html#anfrage">Ablauf</a>
+      <a href="contact.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+    </div>
+
+    <p class="footer-meta">&copy; <span id="year"></span> buildIT</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="src/scripts/app.js"></script>
 </body>
 
 </html>

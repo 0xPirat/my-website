@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/johannesbenedict/**)",
+      "Read(//Users/johannesbenedict/.config/claude/**)",
+      "Bash(find ~ -name blender_mcp* -o -name blender-mcp*)",
+      "Bash(pip show:*)",
+      "Bash(pip3 show:*)",
+      "Bash(uvx blender-mcp:*)",
+      "Skill(update-config)",
+      "Bash(claude mcp:*)"
+    ]
+  }
+}

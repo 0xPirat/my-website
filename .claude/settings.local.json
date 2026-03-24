@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/johannesbenedict/Desktop/buildIT/public -name draco*)",
+      "Bash(find /Users/johannesbenedict/Desktop/buildIT -name draco* -not -path */node_modules/*)",
+      "Bash(find /Users/johannesbenedict/Desktop/buildIT/node_modules/three -name draco_decoder*)",
+      "Bash(find /Users/johannesbenedict/Desktop/buildIT/node_modules -path */draco3d* -name *.wasm)",
+      "Bash(find /Users/johannesbenedict/Desktop/buildIT/node_modules/three -name *.wasm)",
+      "Bash(git:*)",
+      "Bash(find /Users/johannesbenedict/Desktop/buildIT -not -path */node_modules/* -not -path */.git/* -type d)",
+      "Bash(grep -r \"footer\" /Users/johannesbenedict/Desktop/buildIT --include=\"*.html\" --include=\"*.js\" ! -path \"*/node_modules/*\")",
+      "Bash(grep -r footer /Users/johannesbenedict/Desktop/buildIT --include=*.html --include=*.js)",
+      "Bash(grep -r logo /Users/johannesbenedict/Desktop/buildIT --include=*.html --include=*.js)",
+      "Bash(grep:*)"
+    ]
+  }
+}

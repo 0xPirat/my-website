@@ -1,0 +1,7 @@
+# Ignore all raw 3D source files in this folder
+*
+
+# Keep this control file and docs
+!.gitignore
+!README.md
+

@@ -1,0 +1,1371 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Warum wir | buildIT</title>
+  <meta name="description"
+    content="buildIT: Was wir koennen, welche Technologien wir einsetzen und warum wir bessere Webseiten bauen als Agenturen oder Baukastensysteme." />
+  <script src="src/scripts/file-protocol-guard.js"></script>
+  <link rel="stylesheet" href="src/styles/main.css?v=5" />
+  <style>
+    body.is-scene-subpage--warum-wir {
+      --max: 1440px;
+      --warum-secondary: #a88eff;
+      --warum-secondary-soft: rgba(168, 142, 255, 0.12);
+      --warum-secondary-surface: rgba(168, 142, 255, 0.08);
+      --warum-secondary-line: rgba(168, 142, 255, 0.28);
+      --warum-secondary-strong: rgba(168, 142, 255, 0.48);
+    }
+
+    /* ── Zentrierung & Typografie ── */
+    body.is-scene-subpage--warum-wir .page-hero__copy {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    body.is-scene-subpage--warum-wir .page-hero__copy .eyebrow {
+      margin-bottom: clamp(0.8rem, 1.4vw, 1.2rem);
+    }
+
+    body.is-scene-subpage--warum-wir .page-hero__copy h1 {
+      max-width: 15ch;
+      margin-bottom: clamp(1.7rem, 3vw, 2.5rem);
+      margin-left: auto;
+      margin-right: auto;
+      font-size: clamp(3.25rem, 7vw, 7.4rem);
+      line-height: 0.98;
+      font-weight: 500;
+      letter-spacing: -0.055em;
+    }
+
+    body.is-scene-subpage--warum-wir .page-hero__copy > p:not(.eyebrow) {
+      max-width: 54ch;
+      margin-bottom: clamp(2rem, 3.2vw, 2.8rem);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    body.is-scene-subpage--warum-wir .chip-row {
+      justify-content: center;
+      margin-top: 0;
+    }
+
+    body.is-scene-subpage--warum-wir .section-heading {
+      text-align: center;
+      max-width: none;
+    }
+
+    body.is-scene-subpage--warum-wir .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 4rem);
+    }
+
+    body.is-scene-subpage--warum-wir .works-note {
+      max-width: 52ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    body.is-scene-subpage--warum-wir .section-heading > p:not(.eyebrow):not(.works-note) {
+      max-width: 52ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    body.is-scene-subpage--warum-wir .eyebrow {
+      color: rgba(137, 119, 255, 0.82);
+    }
+
+    body.is-scene-subpage--warum-wir .scene-subpage-link,
+    body.is-scene-subpage--warum-wir .scene-subpage-link__icon {
+      color: #000;
+    }
+
+    body.is-scene-subpage--warum-wir .scene-subpage-link,
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary {
+      --button-skew: -18deg;
+      position: relative;
+      isolation: isolate;
+      overflow: visible;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(0, 0, 0, 0.14);
+      box-shadow: none;
+      transition:
+        color 0.22s ease,
+        transform 0.22s ease,
+        border-color 0.28s ease,
+        box-shadow 0.28s ease;
+    }
+
+    body.is-scene-subpage--warum-wir .scene-subpage-link::before,
+    body.is-scene-subpage--warum-wir .scene-subpage-link::after,
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary::before,
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.14);
+      pointer-events: none;
+      opacity: 0;
+      transform: skewX(var(--button-skew));
+      transform-origin: center;
+      transition:
+        transform 0.28s ease,
+        opacity 0.28s ease,
+        border-color 0.28s ease;
+    }
+
+    body.is-scene-subpage--warum-wir .scene-subpage-link::before,
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary::before {
+      z-index: -1;
+    }
+
+    body.is-scene-subpage--warum-wir .scene-subpage-link::after,
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary::after {
+      z-index: -2;
+    }
+
+    body.is-scene-subpage--warum-wir .scene-subpage-link:hover,
+    body.is-scene-subpage--warum-wir .scene-subpage-link:focus-visible,
+    body.is-scene-subpage--warum-wir .scene-subpage-link:hover .scene-subpage-link__icon,
+    body.is-scene-subpage--warum-wir .scene-subpage-link:focus-visible .scene-subpage-link__icon {
+      color: #000;
+    }
+
+    body.is-scene-subpage--warum-wir .scene-subpage-link__label::after {
+      background-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        transparent 34%,
+        rgba(168, 142, 255, 0.14) 44%,
+        rgba(255, 255, 255, 0.98) 50%,
+        rgba(168, 142, 255, 0.2) 56%,
+        transparent 68%,
+        transparent 100%
+      );
+      text-shadow: 0 0 12px rgba(168, 142, 255, 0.18);
+    }
+
+    body.is-scene-subpage--warum-wir .scene-subpage-link__label.is-hover-glinting::after {
+      animation: scene-subpage-link-glint 680ms cubic-bezier(0.24, 0.76, 0.32, 1) both;
+    }
+
+    body.is-scene-subpage--warum-wir .scene-subpage-link:hover,
+    body.is-scene-subpage--warum-wir .scene-subpage-link:focus-visible,
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary:hover,
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary:focus-visible {
+      border-color: rgba(0, 0, 0, 0.22);
+      box-shadow:
+        8px -8px 0 rgba(0, 0, 0, 0.12),
+        16px -16px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    body.is-scene-subpage--warum-wir .scene-subpage-link:hover::before,
+    body.is-scene-subpage--warum-wir .scene-subpage-link:focus-visible::before,
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary:hover::before,
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary:focus-visible::before {
+      transform: translate(8px, -8px) skewX(var(--button-skew));
+      opacity: 0.38;
+    }
+
+    body.is-scene-subpage--warum-wir .scene-subpage-link:hover::after,
+    body.is-scene-subpage--warum-wir .scene-subpage-link:focus-visible::after,
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary:hover::after,
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary:focus-visible::after {
+      transform: translate(16px, -16px) skewX(var(--button-skew));
+      opacity: 0.18;
+    }
+
+    body.is-scene-subpage--warum-wir .scene-subpage-link--back:hover,
+    body.is-scene-subpage--warum-wir .scene-subpage-link--back:focus-visible {
+      box-shadow:
+        -8px -8px 0 rgba(0, 0, 0, 0.12),
+        -16px -16px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    body.is-scene-subpage--warum-wir .scene-subpage-link--back:hover::before,
+    body.is-scene-subpage--warum-wir .scene-subpage-link--back:focus-visible::before {
+      transform: translate(-8px, -8px) skewX(var(--button-skew));
+      opacity: 0.38;
+    }
+
+    body.is-scene-subpage--warum-wir .scene-subpage-link--back:hover::after,
+    body.is-scene-subpage--warum-wir .scene-subpage-link--back:focus-visible::after {
+      transform: translate(-16px, -16px) skewX(var(--button-skew));
+      opacity: 0.18;
+    }
+
+    body.is-scene-subpage--warum-wir .chip-row {
+      column-gap: clamp(1.75rem, 2.8vw, 2.4rem);
+      row-gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    body.is-scene-subpage--warum-wir .service-chip__trigger {
+      background: #0a0f1a;
+      border-color: rgba(103, 89, 255, 0.3);
+      color: rgba(220, 225, 245, 0.88);
+      box-shadow: 0 4px 16px rgba(10, 15, 26, 0.18);
+      padding-top: 0.65rem;
+      padding-bottom: 0.65rem;
+      padding-inline: 1.25rem;
+    }
+
+    body.is-scene-subpage--warum-wir .service-chip__trigger:hover,
+    body.is-scene-subpage--warum-wir .service-chip__trigger:focus-visible,
+    body.is-scene-subpage--warum-wir .service-chip[data-open="true"] .service-chip__trigger {
+      background: #11162a;
+      border-color: rgba(103, 89, 255, 0.55);
+      color: #fff;
+      box-shadow: 0 6px 22px rgba(103, 89, 255, 0.25);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      perspective: 1200px;
+    }
+    @media (max-width: 900px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .skills-grid { grid-template-columns: 1fr; } }
+
+    .skills-grid > .page-card {
+      --skill-accent-rgb: 168, 142, 255;
+      --skill-icon-size: clamp(10.6rem, 18vw, 13rem);
+      --skill-icon-top: clamp(1.7rem, 3.9vw, 3rem);
+      --skill-icon-right: clamp(-1.7rem, -0.7vw, 0rem);
+      --skill-icon-rotate: -12deg;
+      --skill-icon-shift-x: 0%;
+      --skill-icon-shift-y: 0%;
+      --skill-plate-size: clamp(4.4rem, 7vw, 5.4rem);
+      --skill-plate-top: clamp(0.9rem, 1.5vw, 1.2rem);
+      --skill-plate-right: clamp(0.8rem, 1.5vw, 1.2rem);
+      --skill-plate-rotate: 11deg;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      min-height: clamp(15.3rem, 20vw, 17.4rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(1.2rem, 1.7vw, 1.45rem);
+      padding-top: clamp(4rem, 6vw, 5.1rem);
+      background:
+        radial-gradient(circle at 84% 20%, rgba(var(--skill-accent-rgb), 0.13), rgba(var(--skill-accent-rgb), 0) 30%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 255, 0.92)),
+        linear-gradient(135deg, rgba(100, 220, 255, 0.035), rgba(168, 142, 255, 0.05));
+      border: 1px solid rgba(10, 15, 26, 0.08);
+      box-shadow:
+        0 12px 24px rgba(10, 15, 26, 0.07),
+        0 1px 0 rgba(255, 255, 255, 0.92) inset,
+        0 -14px 24px rgba(214, 220, 255, 0.14) inset;
+      transform: translate3d(0, 0, 0);
+      transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+      will-change: transform;
+    }
+
+    .skills-grid > .page-card::before {
+      content: "";
+      position: absolute;
+      top: var(--skill-plate-top);
+      right: var(--skill-plate-right);
+      width: var(--skill-plate-size);
+      height: var(--skill-plate-size);
+      border: 1px solid rgba(var(--skill-accent-rgb), 0.16);
+      background:
+        radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0) 34%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.34), rgba(var(--skill-accent-rgb), 0.07) 38%, rgba(var(--skill-accent-rgb), 0.015));
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.45),
+        inset -12px -16px 22px rgba(255, 255, 255, 0.1),
+        0 18px 34px rgba(var(--skill-accent-rgb), 0.06);
+      clip-path: polygon(0 1.25rem, 1.25rem 0, 100% 0, 100% calc(100% - 1.25rem), calc(100% - 1.25rem) 100%, 0 100%);
+      opacity: 0.74;
+      transform: rotate(var(--skill-plate-rotate)) scaleY(0.88);
+      transform-origin: center;
+      pointer-events: none;
+      z-index: 0;
+      transition: opacity 0.22s ease, filter 0.22s ease;
+    }
+
+    .skills-grid > .page-card > :not(.skill-card__icon) {
+      position: relative;
+      z-index: 2;
+    }
+
+    .skills-grid > .page-card .card-index {
+      margin-bottom: 0.9rem;
+      color: rgba(10, 15, 26, 0.72);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .skills-grid > .page-card h3,
+    .skills-grid > .page-card p {
+      max-width: min(100%, 16.8rem);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.82);
+    }
+
+    .skills-grid > .page-card p:last-child {
+      margin-bottom: 0;
+      color: rgba(10, 15, 26, 0.74);
+    }
+
+    .skills-grid > .page-card::after {
+      content: "";
+      position: absolute;
+      inset: auto 1.25rem 0.9rem 1.25rem;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(100, 220, 255, 0), rgba(168, 142, 255, 0.28), rgba(100, 220, 255, 0));
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .skills-grid > .page-card:hover,
+    .skills-grid > .page-card:focus-within {
+      transform: translate3d(0, -6px, 0) scale(1.01);
+      border-color: rgba(168, 142, 255, 0.22);
+      box-shadow:
+        0 18px 30px rgba(10, 15, 26, 0.09),
+        0 1px 0 rgba(255, 255, 255, 0.96) inset,
+        0 -14px 24px rgba(214, 220, 255, 0.18) inset;
+    }
+
+    .skills-grid > .page-card:hover::before,
+    .skills-grid > .page-card:focus-within::before {
+      opacity: 0.86;
+      filter: saturate(1.08);
+    }
+
+    .skill-card__icon {
+      position: absolute;
+      top: var(--skill-icon-top);
+      right: var(--skill-icon-right);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: var(--skill-icon-size);
+      height: var(--skill-icon-size);
+      margin-bottom: 0;
+      color: rgba(var(--skill-accent-rgb), 0.15);
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.64;
+      mix-blend-mode: multiply;
+      transform: translate3d(var(--skill-icon-shift-x), var(--skill-icon-shift-y), 0) rotate(var(--skill-icon-rotate));
+      transform-origin: center;
+      transition: transform 0.22s ease, color 0.22s ease, opacity 0.22s ease;
+    }
+
+    .skill-card__icon::before {
+      content: "";
+      position: absolute;
+      inset: 18% 18% 36% 28%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0) 76%);
+      filter: blur(8px);
+      opacity: 0.28;
+      z-index: 0;
+    }
+
+    .skill-card__icon::after {
+      content: "";
+      position: absolute;
+      inset: 4%;
+      background: radial-gradient(circle, rgba(var(--skill-accent-rgb), 0.11), rgba(var(--skill-accent-rgb), 0) 70%);
+      filter: blur(24px);
+      opacity: 0.42;
+      z-index: -1;
+      transition: opacity 0.22s ease, filter 0.22s ease;
+    }
+
+    .skill-card__icon svg {
+      width: 90%;
+      height: 90%;
+      overflow: visible;
+      filter:
+        drop-shadow(0 14px 24px rgba(var(--skill-accent-rgb), 0.08))
+        drop-shadow(0 1px 0 rgba(255, 255, 255, 0.45));
+    }
+
+    .skill-card__icon .skill-stroke {
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.86;
+    }
+
+    .skill-card__icon .skill-fill-soft {
+      fill: currentColor;
+      opacity: 0.08;
+    }
+
+    .skill-card__icon .skill-fill-mid {
+      fill: currentColor;
+      opacity: 0.13;
+    }
+
+    .skill-card__icon .skill-fill-strong {
+      fill: currentColor;
+      opacity: 0.19;
+    }
+
+    .skill-card__icon .skill-highlight {
+      fill: rgba(255, 255, 255, 0.3);
+      opacity: 0.65;
+    }
+
+    .skills-grid > .page-card:hover .skill-card__icon,
+    .skills-grid > .page-card:focus-within .skill-card__icon {
+      color: rgba(var(--skill-accent-rgb), 0.18);
+      opacity: 0.74;
+    }
+
+    .skills-grid > .page-card:hover .skill-card__icon::after,
+    .skills-grid > .page-card:focus-within .skill-card__icon::after {
+      opacity: 0.5;
+      filter: blur(26px);
+    }
+
+    .skills-grid > .page-card:nth-child(2),
+    .skills-grid > .page-card:nth-child(5) {
+      --skill-accent-rgb: 128, 156, 255;
+      --skill-icon-top: clamp(1.6rem, 3.5vw, 2.8rem);
+      --skill-icon-right: clamp(-1.9rem, -1vw, -0.1rem);
+      --skill-icon-rotate: 10deg;
+      --skill-icon-shift-y: 4%;
+      --skill-plate-size: clamp(4.2rem, 6.8vw, 5.2rem);
+      --skill-plate-right: clamp(0.65rem, 1.45vw, 1.05rem);
+      --skill-plate-rotate: -10deg;
+    }
+
+    .skills-grid > .page-card:nth-child(3),
+    .skills-grid > .page-card:nth-child(6) {
+      --skill-accent-rgb: 188, 154, 255;
+      --skill-icon-size: clamp(11rem, 19vw, 13.8rem);
+      --skill-icon-top: clamp(1.15rem, 3vw, 2.2rem);
+      --skill-icon-right: clamp(-2.2rem, -1.4vw, -0.4rem);
+      --skill-icon-rotate: -15deg;
+      --skill-icon-shift-y: 8%;
+      --skill-plate-size: clamp(4.4rem, 7vw, 5.5rem);
+      --skill-plate-rotate: 14deg;
+    }
+
+    .skills-grid > .page-card:nth-child(4) {
+      --skill-accent-rgb: 154, 180, 255;
+      --skill-icon-top: clamp(1.65rem, 3.7vw, 2.9rem);
+      --skill-icon-right: clamp(-1.8rem, -0.95vw, -0.05rem);
+      --skill-icon-rotate: 9deg;
+      --skill-plate-size: clamp(4rem, 6.4vw, 5rem);
+      --skill-plate-rotate: -8deg;
+    }
+
+    .tech-stack-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+    .tech-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--warum-secondary-line);
+      background: linear-gradient(180deg, rgba(168, 142, 255, 0.08), rgba(255, 255, 255, 0.9));
+      color: rgba(10, 15, 26, 0.86);
+      font-size: 0.825rem;
+      letter-spacing: 0.02em;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .tech-tag:hover {
+      border-color: var(--warum-secondary-strong);
+      background: linear-gradient(180deg, rgba(168, 142, 255, 0.14), rgba(255, 255, 255, 0.98));
+      color: #050714;
+    }
+    .tech-tag svg {
+      opacity: 0.85;
+      color: var(--warum-secondary);
+    }
+    .tech-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+    }
+
+    .delivery-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 860px) { .delivery-row { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .delivery-row { grid-template-columns: 1fr; } }
+
+    .delivery-callout {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding: 1.25rem 1.75rem;
+      border-radius: 1rem;
+      background:
+        linear-gradient(135deg, rgba(100, 220, 255, 0.04), var(--warum-secondary-surface)),
+        rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--warum-secondary-line);
+    }
+    .delivery-callout__icon { flex-shrink: 0; width: 2.5rem; height: 2.5rem; color: var(--warum-secondary); }
+    .delivery-callout__label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--warum-secondary);
+      margin-bottom: 0.25rem;
+    }
+    .delivery-callout__text {
+      font-size: 1rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.92);
+      margin: 0;
+    }
+
+    body.is-scene-subpage--warum-wir .path-callout {
+      border-color: rgba(103, 89, 255, 0.35);
+      background: #0a0f1a;
+      box-shadow:
+        0 0 0 1px rgba(103, 89, 255, 0.12),
+        0 12px 40px rgba(10, 15, 26, 0.28),
+        0 2px 8px rgba(10, 15, 26, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    body.is-scene-subpage--warum-wir .path-callout::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, rgba(103, 89, 255, 0.18) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    body.is-scene-subpage--warum-wir .path-callout::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(103, 89, 255, 0.7), rgba(168, 160, 255, 0.5), transparent);
+      pointer-events: none;
+    }
+
+    body.is-scene-subpage--warum-wir .path-callout .eyebrow {
+      color: rgba(168, 160, 255, 0.75) !important;
+    }
+
+    body.is-scene-subpage--warum-wir .path-callout h3 {
+      color: rgba(237, 241, 255, 0.95) !important;
+    }
+
+    body.is-scene-subpage--warum-wir .path-callout > div > p {
+      color: rgba(180, 188, 220, 0.72) !important;
+    }
+
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary {
+      min-height: 3.15rem;
+      padding: 0.9rem 1.5rem;
+      color: #fff;
+      font-weight: 650;
+    }
+
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary--soft-rainbow {
+      border-color: rgba(123, 110, 255, 0.5);
+      background: linear-gradient(135deg, #6759ff 0%, #9b87fa 100%);
+      box-shadow:
+        0 4px 20px rgba(103, 89, 255, 0.5),
+        0 1px 4px rgba(0, 0, 0, 0.2);
+      color: #000;
+    }
+
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary--soft-rainbow::before,
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary--soft-rainbow::after {
+      opacity: 1;
+      transform: none;
+    }
+
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary--soft-rainbow::before {
+      inset: -0.18rem;
+      border: none;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 105, 97, 0.4),
+        rgba(255, 177, 89, 0.36),
+        rgba(255, 233, 116, 0.32),
+        rgba(104, 221, 141, 0.3),
+        rgba(103, 205, 255, 0.32),
+        rgba(118, 139, 255, 0.34),
+        rgba(165, 121, 255, 0.36),
+        rgba(255, 132, 214, 0.34),
+        rgba(255, 105, 97, 0.4)
+      );
+      background-size: 400% 100%;
+      filter: blur(10px) saturate(0.8);
+      opacity: 0;
+      z-index: -2;
+      animation: soft-rainbow-glow 18s linear infinite;
+      transition:
+        opacity 0.28s ease,
+        filter 0.28s ease;
+    }
+
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary--soft-rainbow::after {
+      inset: 1px;
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      background:
+        linear-gradient(135deg, rgba(174, 157, 255, 0.2), rgba(255, 255, 255, 0.8) 48%, rgba(238, 243, 255, 0.84));
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.86) inset;
+      z-index: -1;
+    }
+
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary--soft-rainbow:hover,
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary--soft-rainbow:focus-visible {
+      border-color: rgba(123, 110, 255, 0.7);
+      box-shadow:
+        0 6px 28px rgba(103, 89, 255, 0.65),
+        0 2px 6px rgba(0, 0, 0, 0.22);
+      transform: translateY(-1px);
+    }
+
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary--soft-rainbow:hover::before,
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary--soft-rainbow:focus-visible::before {
+      transform: none;
+      opacity: 0.5;
+      filter: blur(12px) saturate(0.9);
+    }
+
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary--soft-rainbow:hover::after,
+    body.is-scene-subpage--warum-wir .path-callout .btn-primary--soft-rainbow:focus-visible::after {
+      transform: none;
+      opacity: 1;
+      background:
+        linear-gradient(135deg, rgba(180, 165, 255, 0.26), rgba(255, 255, 255, 0.82) 46%, rgba(241, 245, 255, 0.88));
+    }
+
+    @keyframes soft-rainbow-glow {
+      0% { background-position: 0 0; }
+      50% { background-position: 400% 0; }
+      100% { background-position: 0 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .skills-grid > .page-card {
+        transition: box-shadow 0.22s ease, border-color 0.22s ease;
+      }
+
+      .skills-grid > .page-card:hover,
+      .skills-grid > .page-card:focus-within {
+        transform: none;
+      }
+
+      body.is-scene-subpage--warum-wir .scene-subpage-link::before,
+      body.is-scene-subpage--warum-wir .scene-subpage-link::after,
+      body.is-scene-subpage--warum-wir .path-callout .btn-primary::before,
+      body.is-scene-subpage--warum-wir .path-callout .btn-primary::after {
+        transition: opacity 0.22s ease;
+      }
+
+      body.is-scene-subpage--warum-wir .scene-subpage-link:hover::before,
+      body.is-scene-subpage--warum-wir .scene-subpage-link:focus-visible::before,
+      body.is-scene-subpage--warum-wir .scene-subpage-link:hover::after,
+      body.is-scene-subpage--warum-wir .scene-subpage-link:focus-visible::after,
+      body.is-scene-subpage--warum-wir .scene-subpage-link--back:hover::before,
+      body.is-scene-subpage--warum-wir .scene-subpage-link--back:focus-visible::before,
+      body.is-scene-subpage--warum-wir .scene-subpage-link--back:hover::after,
+      body.is-scene-subpage--warum-wir .scene-subpage-link--back:focus-visible::after,
+      body.is-scene-subpage--warum-wir .path-callout .btn-primary:hover::before,
+      body.is-scene-subpage--warum-wir .path-callout .btn-primary:focus-visible::before,
+      body.is-scene-subpage--warum-wir .path-callout .btn-primary:hover::after,
+      body.is-scene-subpage--warum-wir .path-callout .btn-primary:focus-visible::after {
+        transform: none;
+      }
+
+      body.is-scene-subpage--warum-wir .path-callout .btn-primary--soft-rainbow::before {
+        animation: none;
+        background-position: 50% 0;
+      }
+    }
+
+    body.is-scene-subpage--warum-wir .page-hero {
+      justify-items: center;
+    }
+
+    body.is-scene-subpage--warum-wir .page-hero__copy {
+      width: 100%;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    body.is-scene-subpage--warum-wir [data-flow-stage] {
+      --layer-shift: 48px;
+      --layer-blur: 12px;
+      --layer-delay: 0ms;
+      transition:
+        opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.72s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: var(--layer-delay);
+    }
+
+    body.is-scene-subpage--warum-wir [data-flow-section] {
+      position: relative;
+      scroll-margin-top: clamp(6.75rem, 8vw, 8rem);
+      transform-origin: center top;
+      transition:
+        opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    body.is-scene-subpage--warum-wir [data-flow-section]::after {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      bottom: -0.5rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(168, 142, 255, 0.38), transparent);
+      opacity: 0;
+      transform: scaleX(0.84);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+      pointer-events: none;
+    }
+
+    body.is-scene-subpage--warum-wir.is-warum-layered [data-flow-stage] {
+      opacity: 0;
+      transform: translate3d(0, var(--layer-shift), 0);
+      filter: blur(var(--layer-blur));
+      will-change: opacity, transform, filter;
+    }
+
+    body.is-scene-subpage--warum-wir.is-warum-layered [data-flow-section].is-layer-active [data-flow-stage],
+    body.is-scene-subpage--warum-wir.is-warum-layered [data-flow-section].is-layer-past [data-flow-stage] {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      filter: blur(0);
+      will-change: auto;
+    }
+
+    body.is-scene-subpage--warum-wir.is-warum-layered [data-flow-section].is-layer-active {
+      opacity: 1;
+      filter: none;
+      transform: none;
+      box-shadow: 0 32px 80px rgba(3, 6, 18, 0.18);
+    }
+
+    body.is-scene-subpage--warum-wir.is-warum-layered [data-flow-section].is-layer-past {
+      opacity: 0.32;
+      filter: blur(4px) saturate(0.72);
+      transform: scale(0.968);
+      box-shadow: none;
+    }
+
+    body.is-scene-subpage--warum-wir.is-warum-layered [data-flow-section].is-layer-active::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    body.is-scene-subpage--warum-wir.is-warum-layered .page-hero__copy > [data-flow-stage]:nth-child(1) { --layer-delay: 0ms; }
+    body.is-scene-subpage--warum-wir.is-warum-layered .page-hero__copy > [data-flow-stage]:nth-child(2) { --layer-delay: 90ms; }
+    body.is-scene-subpage--warum-wir.is-warum-layered .page-hero__copy > [data-flow-stage]:nth-child(3) { --layer-delay: 170ms; }
+    body.is-scene-subpage--warum-wir.is-warum-layered .page-hero__copy > [data-flow-stage]:nth-child(4) { --layer-delay: 250ms; }
+
+    body.is-scene-subpage--warum-wir.is-warum-layered .section-heading[data-flow-stage] { --layer-delay: 0ms; }
+    body.is-scene-subpage--warum-wir.is-warum-layered .skills-grid[data-flow-stage] { --layer-delay: 130ms; }
+    body.is-scene-subpage--warum-wir.is-warum-layered .about-copy[data-flow-stage] { --layer-delay: 0ms; }
+    body.is-scene-subpage--warum-wir.is-warum-layered .tech-code-shell[data-flow-stage] { --layer-delay: 150ms; }
+    body.is-scene-subpage--warum-wir.is-warum-layered .path-callout[data-flow-stage] { --layer-delay: 0ms; }
+
+    @media (min-width: 960px) and (min-height: 700px) and (prefers-reduced-motion: no-preference) {
+      html.is-warum-layered {
+        scroll-behavior: auto;
+      }
+
+      body.is-scene-subpage--warum-wir.is-warum-layered [data-flow-section] {
+        min-height: calc(100svh - clamp(6.25rem, 8vw, 7.5rem));
+        display: grid;
+        align-content: center;
+        padding-top: clamp(2.9rem, 4vh, 4.2rem);
+        padding-bottom: clamp(1.6rem, 2.8vh, 2.4rem);
+      }
+
+      body.is-scene-subpage--warum-wir.is-warum-layered .page-hero--scene {
+        align-items: center;
+      }
+
+      body.is-scene-subpage--warum-wir.is-warum-layered .page-hero__copy {
+        max-width: min(52rem, 100%);
+      }
+
+      body.is-scene-subpage--warum-wir.is-warum-layered .skills-grid {
+        gap: 0.85rem;
+      }
+
+      body.is-scene-subpage--warum-wir.is-warum-layered .skills-grid > .page-card {
+        min-height: clamp(15rem, 19vw, 17rem);
+      }
+
+      body.is-scene-subpage--warum-wir.is-warum-layered .path-callout {
+        min-height: clamp(20rem, 48vh, 26rem);
+        align-items: center;
+      }
+    }
+
+    /* Tech code card */
+    .tech-code-shell {
+      position: relative;
+      display: flex;
+      align-items: stretch;
+      min-height: 320px;
+      padding: clamp(0.35rem, 1vw, 0.85rem) clamp(1.8rem, 5vw, 4.9rem);
+      overflow: visible;
+      isolation: isolate;
+      box-sizing: border-box;
+    }
+
+    .tech-code-shell::before,
+    .tech-code-shell::after {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Iowan Old Style', 'Times New Roman', serif;
+      font-size: clamp(6.6rem, 15vw, 11.8rem);
+      line-height: 0.78;
+      color: rgba(115, 101, 255, 0.22);
+      text-shadow:
+        0 0 1px rgba(115, 101, 255, 0.28),
+        0 0 28px rgba(115, 101, 255, 0.12);
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .tech-code-shell::before {
+      content: "{";
+      left: clamp(-0.2rem, 0.2vw, 0.55rem);
+    }
+
+    .tech-code-shell::after {
+      content: "}";
+      right: clamp(-0.2rem, 0.2vw, 0.55rem);
+    }
+
+    .tech-code-shell[data-tech-braces-state="ready"]::before,
+    .tech-code-shell[data-tech-braces-state="ready"]::after {
+      opacity: 0;
+    }
+
+    .tech-code-shell[data-tech-braces-hover="left"],
+    .tech-code-shell[data-tech-braces-hover="right"] {
+      cursor: pointer;
+    }
+
+    .tech-code-card {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      background: #0a0f1a !important;
+      border-color: rgba(103, 89, 255, 0.18) !important;
+      padding: 0 !important;
+      overflow: hidden;
+      display: flex !important;
+      align-items: stretch !important;
+      min-height: 320px;
+      box-shadow:
+        0 0 0 1px rgba(103, 89, 255, 0.08),
+        0 28px 64px rgba(10, 15, 26, 0.14);
+    }
+
+    .tech-braces-stage {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .tech-code-shell[data-tech-braces-state="loading"] .tech-braces-stage,
+    .tech-code-shell[data-tech-braces-state="ready"] .tech-braces-stage {
+      opacity: 1;
+    }
+
+    .tech-braces-stage canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 18px 28px rgba(103, 89, 255, 0.16));
+    }
+
+    .tech-code-window {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .tech-code-titlebar {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.75rem 1rem;
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(103, 89, 255, 0.14);
+    }
+
+    .tech-code-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .tech-code-filename {
+      margin-left: 0.6rem;
+      font-size: 0.72rem;
+      color: rgba(200, 210, 240, 0.45);
+      font-family: 'Courier New', monospace;
+      letter-spacing: 0.04em;
+    }
+
+    .tech-code-body {
+      flex: 1;
+      margin: 0;
+      padding: 1.25rem 1.25rem 1rem;
+      font-size: 0.78rem;
+      line-height: 1.7;
+      font-family: 'Courier New', Courier, monospace;
+      background: transparent;
+      overflow: hidden;
+      white-space: pre;
+    }
+
+    .tech-code-body code { background: none; padding: 0; }
+
+    .tc-tag    { color: rgba(100, 180, 255, 0.85); }
+    .tc-attr   { color: rgba(168, 218, 148, 0.85); }
+    .tc-str    { color: rgba(255, 185, 100, 0.85); }
+    .tc-comment{ color: rgba(150, 160, 200, 0.45); font-style: italic; }
+    .tc-text   { color: rgba(220, 225, 245, 0.72); }
+
+    .tech-code-metrics {
+      display: flex;
+      gap: 0;
+      border-top: 1px solid rgba(103, 89, 255, 0.14);
+    }
+
+    .tech-metric {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.75rem 0.5rem;
+      gap: 0.2rem;
+      border-right: 1px solid rgba(103, 89, 255, 0.1);
+    }
+
+    .tech-metric:last-child { border-right: none; }
+
+    .tech-metric__score {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: rgba(100, 220, 140, 0.92);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .tech-metric__label {
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(180, 190, 220, 0.45);
+    }
+
+    @media (max-width: 1040px) {
+      .tech-code-shell {
+        min-height: 28rem;
+        padding-inline: clamp(1rem, 5vw, 3rem);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .tech-code-shell {
+        min-height: 24rem;
+        padding-inline: clamp(0.55rem, 3vw, 1.2rem);
+      }
+
+      .tech-code-shell::before,
+      .tech-code-shell::after {
+        font-size: clamp(5.2rem, 17vw, 6.8rem);
+        color: rgba(115, 101, 255, 0.18);
+      }
+    }
+  </style>
+</head>
+
+<body class="is-scene-subpage is-scene-subpage--warum-wir" data-scene-page="warum-wir">
+
+  <!-- Cursor-Reveal Hintergrund -->
+  <canvas id="warum-reveal-canvas" aria-hidden="true"></canvas>
+
+  <div class="site-bg" aria-hidden="true">
+    <div class="bg-orb bg-orb-a"></div>
+    <div class="bg-orb bg-orb-b"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <header class="scene-subpage-header" data-scene-subpage-header></header>
+
+  <main class="legal-main scene-subpage-main">
+
+    <!-- HERO -->
+    <section class="page-hero page-hero--scene section-frame is-layer-active" data-flow-section="hero">
+      <div class="page-hero__copy">
+        <p class="eyebrow" data-flow-stage>Warum wir</p>
+        <h1 data-flow-stage>Design, Code und Wirkung. Alles aus einer Hand ohne Agenturaufwand.</h1>
+        <p data-flow-stage>
+          Wir entwickeln moderne Webauftritte fuer kleine und mittelstaendische Unternehmen in Rostock.
+          Klar in der Struktur, sauber im Code, stark in der Wirkung – und ohne unnoetige Zwischenstufen.
+        </p>
+
+        <div class="chip-row" data-flow-stage>
+          <div class="service-chip" data-service-chip data-open="false">
+            <button
+              class="service-chip__trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="service-chip-webdesign-info"
+              data-service-chip-trigger
+            >
+              Web Design
+            </button>
+            <span
+              class="service-chip__popover"
+              id="service-chip-webdesign-info"
+              role="note"
+              aria-hidden="true"
+              data-service-chip-popover
+            >
+              Webdesign ist die Verbindung aus &Auml;sthetik und Funktion: Es gestaltet Websites so, dass sie nicht nur gut aussehen, sondern Inhalte klar, benutzerfreundlich und wirkungsvoll vermitteln.
+            </span>
+          </div>
+          <div class="service-chip service-chip--popover-up" data-service-chip data-open="false">
+            <button
+              class="service-chip__trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="service-chip-webentwicklung-info"
+              data-service-chip-trigger
+            >
+              Webentwicklung
+            </button>
+            <span
+              class="service-chip__popover"
+              id="service-chip-webentwicklung-info"
+              role="note"
+              aria-hidden="true"
+              data-service-chip-popover
+            >
+              App- &amp; Web-Entwicklung ist die Kunst, Ideen in digitale Wirklichkeit zu verwandeln: Sie verbindet Technik mit Nutzererlebnis und erschafft Anwendungen, die klar, intuitiv und lebendig auf die Beduerfnisse der Menschen reagieren.
+            </span>
+          </div>
+          <div class="service-chip" data-service-chip data-open="false">
+            <button
+              class="service-chip__trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="service-chip-motion-info"
+              data-service-chip-trigger
+            >
+              Motion &amp; Animationen
+            </button>
+            <span
+              class="service-chip__popover"
+              id="service-chip-motion-info"
+              role="note"
+              aria-hidden="true"
+              data-service-chip-popover
+            >
+              Animation ist die Kunst, dem Visuellen Leben einzuhauchen: Sie f&uuml;hrt Elemente durch Zeit und Bewegung und schafft so Momente, die Aufmerksamkeit wecken, Geschichten tragen und Eindr&uuml;cke vertiefen.
+            </span>
+          </div>
+          <div class="service-chip service-chip--popover-up" data-service-chip data-open="false">
+            <button
+              class="service-chip__trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="service-chip-seo-info"
+              data-service-chip-trigger
+            >
+              SEO-Basis
+            </button>
+            <span
+              class="service-chip__popover"
+              id="service-chip-seo-info"
+              role="note"
+              aria-hidden="true"
+              data-service-chip-popover
+            >
+              SEO-Basis ist das Fundament digitaler Sichtbarkeit: Sie ordnet Inhalte mit Klarheit und Struktur, damit Suchmaschinen sie verstehen und Menschen genau dort ankommen, wo ihr Interesse beginnt.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAS WIR KOENNEN -->
+    <section class="page-section section-frame" data-flow-section="leistungen">
+      <div class="section-heading" data-reveal data-flow-stage>
+        <p class="eyebrow">Leistungen</p>
+        <h2>Was wir koennen und was wir dir liefern.</h2>
+        <p class="works-note">
+          Kein Baukastensystem, kein generisches Template. Jede Seite entsteht neu –
+          mit echtem Anspruch an Gestaltung, Technik und Wirkung.
+        </p>
+      </div>
+
+      <div class="skills-grid" data-reveal data-flow-stage>
+        <article class="page-card glass-card">
+          <div class="skill-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 64 64" aria-hidden="true">
+              <rect class="skill-fill-soft" x="10" y="12" width="44" height="34" rx="8"/>
+              <rect class="skill-fill-mid" x="18" y="24" width="14" height="14" rx="3"/>
+              <path class="skill-fill-soft" d="M36 24h10a3 3 0 0 1 3 3v2H36z"/>
+              <path class="skill-fill-soft" d="M36 31h13v2.8H36z"/>
+              <path class="skill-fill-soft" d="M18 42h31v2.8H18z"/>
+              <path class="skill-stroke" stroke-width="2.8" d="M10 18.5h44"/>
+              <rect class="skill-stroke" stroke-width="2.8" x="10" y="12" width="44" height="34" rx="8"/>
+              <path class="skill-highlight" d="M16 17c1.3-1.6 2.5-2.3 4-2.3H43c2.9 0 4.7.8 6.5 2.3z"/>
+            </svg>
+          </div>
+          <p class="card-index">01</p>
+          <h3>Webdesign</h3>
+          <p>Individuelle Gestaltung, die zur Marke passt. Kein Template-Look, kein Copy-Paste. Jede Seite beginnt bei null.</p>
+        </article>
+
+        <article class="page-card glass-card">
+          <div class="skill-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 64 64" aria-hidden="true">
+              <rect class="skill-fill-soft" x="11" y="14" width="42" height="32" rx="8"/>
+              <path class="skill-fill-mid" d="M21 25 14.5 32 21 39l3-2.7L19.9 32l4.1-4.3z"/>
+              <path class="skill-fill-mid" d="M43 25 49.5 32 43 39l-3-2.7 4.1-4.3-4.1-4.3z"/>
+              <path class="skill-fill-strong" d="M31.5 22h3.2L30 43h-3.2z"/>
+              <path class="skill-fill-soft" d="M18 49h20c5.8 0 8 1.1 8 3H10c0-1.9 2.2-3 8-3z"/>
+              <rect class="skill-stroke" stroke-width="2.8" x="11" y="14" width="42" height="32" rx="8"/>
+              <path class="skill-stroke" stroke-width="2.8" d="m24 25-7 7 7 7m16-14 7 7-7 7m-8-17-5 20"/>
+            </svg>
+          </div>
+          <p class="card-index">02</p>
+          <h3>Webentwicklung</h3>
+          <p>Sauberer, performanter Code ohne unnoetige Abhaengigkeiten. Wartbar, robust und spaeter problemlos erweiterbar.</p>
+        </article>
+
+        <article class="page-card glass-card">
+          <div class="skill-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 64 64" aria-hidden="true">
+              <path class="skill-fill-soft" d="M14 33c4.8-8.5 10.8-12.8 18-12.8S45.2 24.5 50 33c-4.8 8.5-10.8 12.8-18 12.8S18.8 41.5 14 33Z"/>
+              <circle class="skill-fill-strong" cx="32" cy="33" r="7.2"/>
+              <circle class="skill-fill-soft" cx="32" cy="33" r="13.2"/>
+              <path class="skill-stroke" stroke-width="2.8" d="M14 33c4.8-8.5 10.8-12.8 18-12.8S45.2 24.5 50 33c-4.8 8.5-10.8 12.8-18 12.8S18.8 41.5 14 33Z"/>
+              <circle class="skill-stroke" stroke-width="2.8" cx="32" cy="33" r="7.2"/>
+              <path class="skill-stroke" stroke-width="2.4" d="M32 12v6m0 30v6M12 33h6m28 0h6m-8.5-14.5 4-4m-31 31 4-4m0-27 4 4m19 19 4 4"/>
+            </svg>
+          </div>
+          <p class="card-index">03</p>
+          <h3>Motion &amp; Animationen</h3>
+          <p>Hochwertige Interaktionen und Uebergaenge, die den Inhalt tragen und Vertrauen erzeugen – nie als Selbstzweck.</p>
+        </article>
+
+        <article class="page-card glass-card">
+          <div class="skill-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 64 64" aria-hidden="true">
+              <rect class="skill-fill-soft" x="21" y="9" width="22" height="46" rx="8"/>
+              <rect class="skill-fill-mid" x="24.5" y="15" width="15" height="24" rx="3.5"/>
+              <path class="skill-fill-strong" d="M32 45.2a3.4 3.4 0 1 1 0 6.8 3.4 3.4 0 0 1 0-6.8Z"/>
+              <rect class="skill-stroke" stroke-width="2.8" x="21" y="9" width="22" height="46" rx="8"/>
+              <path class="skill-stroke" stroke-width="2.6" d="M28 14h8"/>
+              <path class="skill-stroke" stroke-width="2.6" d="M24.5 44h15"/>
+              <circle class="skill-fill-soft" cx="46.5" cy="39.5" r="6.8"/>
+              <path class="skill-stroke" stroke-width="2.4" d="M46.5 34v11m-5.5-5.5H52"/>
+            </svg>
+          </div>
+          <p class="card-index">04</p>
+          <h3>Mobile First</h3>
+          <p>Jeder Auftritt wird von Anfang an fuer Smartphones entworfen und optimiert. Nicht als Nachgedanke – als Ausgangspunkt.</p>
+        </article>
+
+        <article class="page-card glass-card">
+          <div class="skill-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 64 64" aria-hidden="true">
+              <path class="skill-fill-soft" d="M17 44h22a11 11 0 0 0 0-22H17z"/>
+              <path class="skill-fill-mid" d="M22 39V28h3.5v11zm7-5V24h3.5v10zm7-2V20h3.5v12z"/>
+              <circle class="skill-fill-soft" cx="40" cy="28" r="10.5"/>
+              <path class="skill-stroke" stroke-width="2.8" d="M17 44h22a11 11 0 0 0 0-22H17z"/>
+              <path class="skill-stroke" stroke-width="2.8" d="M22 39V28m7 6V24m7 8V20"/>
+              <circle class="skill-stroke" stroke-width="2.8" cx="40" cy="28" r="10.5"/>
+              <path class="skill-stroke" stroke-width="2.8" d="m47.5 35.5 6.5 6.5"/>
+            </svg>
+          </div>
+          <p class="card-index">05</p>
+          <h3>SEO-Grundstruktur</h3>
+          <p>Technisch sauberer Seitenaufbau, strukturierte Metadaten und eine solide Basis fuer Sichtbarkeit.</p>
+        </article>
+
+        <article class="page-card glass-card">
+          <div class="skill-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 64 64" aria-hidden="true">
+              <circle class="skill-fill-soft" cx="32" cy="32" r="17"/>
+              <circle class="skill-fill-mid" cx="32" cy="32" r="9"/>
+              <path class="skill-fill-strong" d="M32 12 35.6 24l12.4.6-9.8 7.6 3.5 12-10.1-6.8-10.1 6.8 3.5-12-9.8-7.6 12.4-.6z"/>
+              <circle class="skill-stroke" stroke-width="2.8" cx="32" cy="32" r="17"/>
+              <circle class="skill-stroke" stroke-width="2.4" cx="32" cy="32" r="9"/>
+              <path class="skill-stroke" stroke-width="2.4" d="M32 15v6m0 22v6m17-17h-6M21 32h-6"/>
+            </svg>
+          </div>
+          <p class="card-index">06</p>
+          <h3>Positionierung &amp; Dramaturgie</h3>
+          <p>Auf dich zugeschnitten: ein personalisierter Auftritt, der dein Angebot klar einordnet und stimmig inszeniert.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- WOMIT WIR ARBEITEN -->
+    <section class="page-section section-frame" data-flow-section="technologie" id="technologie-stack">
+      <div class="about-grid">
+        <article class="about-copy glass-card" data-reveal data-flow-stage>
+          <p class="eyebrow">Technologie</p>
+          <h2>Moderner Stack. Kein Ballast, den du bezahlst aber nie siehst.</h2>
+          <p>
+            Wir arbeiten mit aktuellen Web-Technologien, die sauber strukturiert sind
+            und keine unnoetige Abhaengigkeit von externen Systemen mitbringen.
+            Was wir einsetzen, hat einen Grund – und was keinen braucht, lassen wir weg.
+          </p>
+          <div class="tech-stack-wrap">
+            <span class="tech-tag">
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              HTML
+            </span>
+            <span class="tech-tag">
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              CSS
+            </span>
+            <span class="tech-tag">
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              JavaScript
+            </span>
+            <span class="tech-tag">
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              Three.js
+            </span>
+            <span class="tech-tag">
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              Web GL
+            </span>
+            <span class="tech-tag">
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              Vite
+            </span>
+            <span class="tech-tag">
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              CSS-Animation
+            </span>
+          </div>
+        </article>
+
+        <div
+          class="about-media tech-code-shell"
+          data-reveal
+          data-flow-stage
+          data-tech-braces-root
+          data-tech-braces-model-url="/public/models/warum-wir/geschweifte-klammer-3d.glb"
+          data-tech-braces-state="fallback"
+        >
+          <div class="glass-card tech-code-card">
+            <div class="tech-code-window">
+              <div class="tech-code-titlebar">
+                <span class="tech-code-dot" style="background:#ff5f57"></span>
+                <span class="tech-code-dot" style="background:#febc2e"></span>
+                <span class="tech-code-dot" style="background:#28c840"></span>
+                <span class="tech-code-filename">index.html</span>
+              </div>
+              <pre class="tech-code-body" aria-hidden="true"><code><span class="tc-tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tc-tag">&lt;html</span> <span class="tc-attr">lang</span>=<span class="tc-str">"de"</span><span class="tc-tag">&gt;</span>
+<span class="tc-tag">&lt;head&gt;</span>
+  <span class="tc-comment">&lt;!-- kein WordPress, kein Ballast --&gt;</span>
+  <span class="tc-tag">&lt;meta</span> <span class="tc-attr">charset</span>=<span class="tc-str">"UTF-8"</span><span class="tc-tag">&gt;</span>
+  <span class="tc-tag">&lt;link</span> <span class="tc-attr">rel</span>=<span class="tc-str">"stylesheet"</span>
+        <span class="tc-attr">href</span>=<span class="tc-str">"styles.css"</span><span class="tc-tag">&gt;</span>
+<span class="tc-tag">&lt;/head&gt;</span>
+<span class="tc-tag">&lt;body&gt;</span>
+
+  <span class="tc-tag">&lt;section</span> <span class="tc-attr">class</span>=<span class="tc-str">"hero"</span><span class="tc-tag">&gt;</span>
+    <span class="tc-tag">&lt;h1&gt;</span><span class="tc-text">Dein Auftritt.</span><span class="tc-tag">&lt;/h1&gt;</span>
+    <span class="tc-tag">&lt;p&gt;</span><span class="tc-text">Klar. Sauber. Dein.</span><span class="tc-tag">&lt;/p&gt;</span>
+  <span class="tc-tag">&lt;/section&gt;</span>
+
+<span class="tc-tag">&lt;/body&gt;</span>
+<span class="tc-tag">&lt;/html&gt;</span></code></pre>
+              <div class="tech-code-metrics">
+                <div class="tech-metric">
+                  <span class="tech-metric__score">100</span>
+                  <span class="tech-metric__label">Performance</span>
+                </div>
+                <div class="tech-metric">
+                  <span class="tech-metric__score">100</span>
+                  <span class="tech-metric__label">Best Practices</span>
+                </div>
+                <div class="tech-metric">
+                  <span class="tech-metric__score">100</span>
+                  <span class="tech-metric__label">SEO</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tech-braces-stage" data-tech-braces-canvas aria-hidden="true"></div>
+          <span class="sr-only">Dekorative 3D-Klammern rahmen das Code-Beispiel ein.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="page-section section-frame" data-flow-section="cta">
+      <div class="path-callout glass-card" data-reveal data-flow-stage>
+        <div>
+          <p class="eyebrow subtle">Naechster Schritt</p>
+          <h3>Wenn du einen Auftritt willst, der wirklich ueberzeugt</h3>
+          <p>Dann schauen wir gemeinsam auf dein Unternehmen, dein Ziel und den sauberen Weg zu einem Webauftritt, der dir Kunden bringt.</p>
+        </div>
+        <a class="btn btn-primary btn-primary--soft-rainbow" href="contact.html">Projekt anfragen</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="scene-subpage-footer" data-scene-subpage-footer></footer>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "/public/vendor/three/three.module.js",
+        "three/addons/": "/node_modules/three/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="src/scripts/app.js?v=32"></script>
+</body>
+
+</html>

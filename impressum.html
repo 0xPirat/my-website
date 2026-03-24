@@ -4,157 +4,124 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Impressum - Kinetic Flow</title>
-  <meta name="description" content="Impressum" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Impressum | buildIT</title>
+  <meta name="description" content="Impressum von buildIT." />
+  <script src="src/scripts/file-protocol-guard.js"></script>
+  <link rel="stylesheet" href="src/styles/main.css" />
 </head>
 
-<body class="no-intro">
-  <div class="matrix-intro" aria-hidden="true">
-    <canvas id="matrix-canvas"></canvas>
-    <div class="matrix-sheen"></div>
+<body>
+  <div class="site-bg" aria-hidden="true">
+    <div class="bg-orb bg-orb-a"></div>
+    <div class="bg-orb bg-orb-b"></div>
+    <div class="bg-grid"></div>
   </div>
-  <div class="bg-noise" aria-hidden="true"></div>
-  <div class="bg-beam beam-1" aria-hidden="true"></div>
-  <div class="bg-beam beam-2" aria-hidden="true"></div>
 
   <header class="site-header">
-    <nav class="nav">
-      <div class="brand">Johannes Benedict</div>
-      <div class="nav-links">
-        <a href="index.html#services">Services</a>
-        <a href="index.html#process">Process</a>
-        <a href="index.html#work">Proof</a>
-        <a href="index.html#contact">Contact</a>
+    <nav class="nav-wrap" aria-label="Hauptnavigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">buildIT</span>
+      </a>
+
+      <div class="nav-panel" id="site-nav">
+        <a href="index.html#warum-wir">Warum wir</a>
+        <a href="index.html#anfrage">Ablauf</a>
+        <a href="contact.html">Kontakt</a>
+        <a href="datenschutz.html">Datenschutz</a>
       </div>
-      <a class="btn btn-primary" href="index.html#contact"><span>Request a project</span></a>
+
+      <a class="btn btn-primary btn-small nav-cta" href="contact.html">Kontaktiere uns</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Menue oeffnen</span>
+      </button>
     </nav>
   </header>
 
-  <main>
-    <section class="section approach-hero">
-      <div class="section-inner approach-hero-inner">
-        <div>
-          <div class="eyebrow">Impressum</div>
-          <h1 class="approach-title">Rechtliche Angaben</h1>
-          <p class="approach-lead">
-            Nachfolgend finden Sie die Pflichtangaben gemaess § 5 DDG. Bitte tragen Sie Ihre Daten
-            in die eckigen Klammern ein.
-          </p>
-        </div>
+  <main class="legal-main">
+    <section class="page-hero section-frame">
+      <div data-reveal>
+        <p class="eyebrow">Impressum</p>
+        <h1>Rechtliche Angaben fuer den Website-Auftritt.</h1>
+        <p>Trage hier die vollstaendigen Angaben gemaess den fuer dich geltenden Pflichten ein.</p>
       </div>
     </section>
 
-    <section class="section approach-flow">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2>Angaben gemaess § 5 DDG</h2>
-          <p>Vollstaendige, ladungsfaehige Angaben fuer Ihre Website.</p>
-        </div>
-        <div class="grid two">
-          <article class="service-card reveal">
-            <h3>Anbieter</h3>
-            <p>
-              [Unternehmensname / Vor- und Nachname]<br />
-              [Rechtsform, z.B. Einzelunternehmen, GmbH]<br />
-              [Strasse und Hausnummer]<br />
-              [PLZ, Ort]<br />
-              [Land]
-            </p>
-          </article>
-          <article class="service-card reveal">
-            <h3>Kontakt</h3>
-            <p>
-              Telefon: [Telefonnummer]<br />
-              E-Mail: [E-Mail-Adresse]<br />
-              Website: [Domain]
-            </p>
-          </article>
-        </div>
-        <div class="grid two" style="margin-top: 24px;">
-          <article class="service-card reveal">
-            <h3>Vertretungsberechtigte Person</h3>
-            <p>[Vor- und Nachname der vertretungsberechtigten Person]</p>
-          </article>
-          <article class="service-card reveal">
-            <h3>Registereintrag</h3>
-            <p>
-              Register: [z.B. Handelsregister, Vereinsregister]<br />
-              Registergericht: [Ort]<br />
-              Registernummer: [Nummer]
-            </p>
-          </article>
-        </div>
-        <div class="grid two" style="margin-top: 24px;">
-          <article class="service-card reveal">
-            <h3>Umsatzsteuer</h3>
-            <p>
-              USt-IdNr.: [Umsatzsteuer-Identifikationsnummer]<br />
-              Wirtschafts-IdNr.: [Wirtschafts-Identifikationsnummer]
-            </p>
-          </article>
-          <article class="service-card reveal">
-            <h3>Aufsichtsbehoerde</h3>
-            <p>[Zustaendige Aufsichtsbehoerde, falls erforderlich]</p>
-          </article>
-        </div>
-        <div class="grid two" style="margin-top: 24px;">
-          <article class="service-card reveal">
-            <h3>Verantwortlich i.S.d. § 18 MStV</h3>
-            <p>
-              [Vor- und Nachname]<br />
-              [Anschrift]<br />
-              (nur erforderlich, wenn redaktionell-journalistische Inhalte vorhanden sind)
-            </p>
-          </article>
-          <article class="service-card reveal">
-            <h3>Streitbeilegung</h3>
-            <p>
-              Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer
-              Verbraucherschlichtungsstelle teilzunehmen. [Optionaler Hinweis]
-            </p>
-          </article>
-        </div>
-        <div class="grid two" style="margin-top: 24px;">
-          <article class="service-card reveal">
-            <h3>Haftung fuer Inhalte</h3>
-            <p>
-              Als Diensteanbieter sind wir gemaess DDG fuer eigene Inhalte verantwortlich. Eine
-              Haftung fuer fremde Inhalte besteht erst ab Kenntnis konkreter Rechtsverletzungen.
-            </p>
-          </article>
-          <article class="service-card reveal">
-            <h3>Urheberrecht</h3>
-            <p>
-              Die durch den Seitenbetreiber erstellten Inhalte unterliegen dem deutschen
-              Urheberrecht. Vervielfaeltigung nur mit Zustimmung.
-            </p>
-          </article>
-        </div>
+    <section class="page-section section-frame">
+      <div class="legal-grid">
+        <article class="legal-card page-card glass-card" data-reveal>
+          <h3>Anbieter</h3>
+          <p>
+            [Unternehmensname / Vor- und Nachname]<br />
+            [Rechtsform]<br />
+            [Strasse und Hausnummer]<br />
+            [PLZ, Ort]<br />
+            [Land]
+          </p>
+        </article>
+        <article class="legal-card page-card glass-card" data-reveal>
+          <h3>Kontakt</h3>
+          <p>
+            Telefon: [Telefonnummer]<br />
+            E-Mail: [E-Mail-Adresse]<br />
+            Website: [Domain]
+          </p>
+        </article>
+        <article class="legal-card page-card glass-card" data-reveal>
+          <h3>Vertretungsberechtigte Person</h3>
+          <p>[Vor- und Nachname der vertretungsberechtigten Person]</p>
+        </article>
+        <article class="legal-card page-card glass-card" data-reveal>
+          <h3>Registereintrag</h3>
+          <p>
+            Register: [z.B. Handelsregister]<br />
+            Registergericht: [Ort]<br />
+            Registernummer: [Nummer]
+          </p>
+        </article>
+        <article class="legal-card page-card glass-card" data-reveal>
+          <h3>Steuerangaben</h3>
+          <p>
+            USt-IdNr.: [Nummer]<br />
+            Wirtschafts-IdNr.: [Nummer]
+          </p>
+        </article>
+        <article class="legal-card page-card glass-card" data-reveal>
+          <h3>Weitere Hinweise</h3>
+          <ul>
+            <li>Verantwortlich i.S.d. Paragraf 18 MStV: [Name, Anschrift]</li>
+            <li>Hinweis zur Streitbeilegung: [optional ergaenzen]</li>
+            <li>Aufsichtsbehoerde: [falls erforderlich]</li>
+          </ul>
+        </article>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-text">Made by 0xPirat. All rights reserved.</div>
-    <div class="footer-nav">
-      <div class="footer-group">
-        <div class="footer-title"></div>
-        <div class="footer-links">
-          <a href="impressum.html" data-link="impressum.html" data-duration="1000">Impressum</a>
-          <a href="datenschutz.html" data-link="datenschutz.html" data-duration="1000">Datenschutz</a>
-          <a href="privacy.html" data-link="privacy.html" data-duration="1000">Privacy</a>
-        </div>
-      </div>
+    <div>
+      <a class="brand brand-footer" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">buildIT</span>
+      </a>
+      <p class="footer-copy">Juristische Platzhalter sollten vor der Veroeffentlichung mit echten Angaben ersetzt werden.</p>
     </div>
+
+    <div class="footer-links">
+      <a href="index.html#warum-wir">Warum wir</a>
+      <a href="index.html#anfrage">Ablauf</a>
+      <a href="contact.html">Kontakt</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+
+    <p class="footer-meta">&copy; <span id="year"></span> buildIT</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="src/scripts/app.js"></script>
 </body>
 
 </html>

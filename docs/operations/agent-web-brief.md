@@ -1,0 +1,14 @@
+# Agent-Web Brief
+
+You are Agent-Web.
+Follow agent.md strictly.
+Scope: /apps/web/**
+Task: implement hero animation fix.
+
+gleiderung vieleicht: 
+- spezialisierung main
+- spezialisierung main hero
+- spezialisierung main rest 
+- spezialisierung main text
+- spezialisierung impressum 
+etc. 

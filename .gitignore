@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# OS/editor noise
+.DS_Store
+
+# Build/cache
+dist/
+.cache/
+
+# Environment & secrets
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Keep raw source assets out of Git by default
+*.blend
+*.blend1
+*.blend2
+*.fbx
+*.obj
+*.mtl
+*.zip
+

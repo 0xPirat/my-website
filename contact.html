@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontakt | buildIT</title>
+  <meta name="description"
+    content="Kontaktiere buildIT ueber das Anfrageformular. Teile uns kurz mit, was du bauen oder verbessern willst." />
+  <script src="src/scripts/file-protocol-guard.js"></script>
+  <link rel="stylesheet" href="src/styles/main.css" />
+</head>
+
+<body>
+  <div class="site-bg" aria-hidden="true">
+    <div class="bg-orb bg-orb-a"></div>
+    <div class="bg-orb bg-orb-b"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Hauptnavigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">buildIT</span>
+      </a>
+
+      <div class="nav-panel" id="site-nav">
+        <a href="index.html#warum-wir">Warum wir</a>
+        <a href="index.html#anfrage">Ablauf</a>
+        <a href="contact.html" aria-current="page">Kontakt</a>
+      </div>
+
+      <a class="btn btn-primary btn-small nav-cta" href="#kontaktformular">Kontaktiere uns</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Menue oeffnen</span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="legal-main">
+    <section class="page-hero section-frame">
+      <div data-reveal>
+        <p class="eyebrow">Kontakt</p>
+        <h1>Erzaehl uns kurz, was du bauen oder verbessern willst.</h1>
+        <p>
+          Wenn du eine neue Website, eine klarere Positionierung oder einen Relaunch planst,
+          ist diese Seite dein direkter Einstieg. Schick uns die Eckdaten ueber das Formular,
+          dann melden wir uns mit dem passenden naechsten Schritt.
+        </p>
+      </div>
+
+      <div class="page-meta">
+        <article class="page-card glass-card" data-reveal>
+          <p class="card-index">Austausch</p>
+          <h3>Kurz, klar und ohne Umwege.</h3>
+          <p>Du musst noch kein fertiges Briefing haben. Ein sauberer Ueberblick ueber Ziel, Angebot und Ausgangslage reicht fuer den Start.</p>
+        </article>
+        <article class="page-card glass-card" data-reveal>
+          <p class="card-index">Format</p>
+          <h3>Formular zuerst, Abstimmung danach.</h3>
+          <p>Nach dem Absenden oeffnet sich deine Mail-App mit einer vorbereiteten Anfrage an hello@buildit.studio.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section section-frame" id="kontaktformular">
+      <div class="contact-grid">
+        <div class="contact-copy" data-reveal>
+          <p class="eyebrow">Anfrageformular</p>
+          <h2>Damit wir klar verstehen, worum es geht.</h2>
+          <p>
+            Je klarer Ausgangslage, Ziel und Rahmen sind, desto praeziser koennen wir antworten.
+            Wenn etwas noch offen ist, ist das kein Problem. Schreib einfach, was heute schon feststeht.
+          </p>
+
+          <div class="contact-notes">
+            <article class="page-card glass-card">
+              <p class="card-index">Hilfreich</p>
+              <h3>Was du schon nennen kannst</h3>
+              <p>Branche, Angebot, aktuelle Website, Ziel des Projekts und ob eher Klarheit, Vertrauen oder Leads im Fokus stehen.</p>
+            </article>
+            <article class="page-card glass-card">
+              <p class="card-index">Antwortweg</p>
+              <h3>So landet die Anfrage bei uns</h3>
+              <p>Das Formular sammelt deine Angaben und uebergibt sie als vorbereitete E-Mail, damit du sie direkt absenden kannst.</p>
+            </article>
+          </div>
+        </div>
+
+        <form class="contact-form glass-card" data-reveal>
+          <input type="hidden" name="estimateSelection" value="" />
+
+          <label for="contact-name">Name</label>
+          <input id="contact-name" name="name" type="text" autocomplete="name" required />
+
+          <label for="contact-email">E-Mail</label>
+          <input id="contact-email" name="email" type="email" autocomplete="email" required />
+
+          <label for="contact-phone">Telefon</label>
+          <input id="contact-phone" name="phone" type="tel" autocomplete="tel" />
+
+          <label for="contact-company">Firma</label>
+          <input id="contact-company" name="company" type="text" autocomplete="organization" />
+
+          <label for="contact-message">Worum geht es?</label>
+          <textarea id="contact-message" name="message" rows="8"
+            placeholder="Zum Beispiel: Relaunch, neue Landingpage, bessere Positionierung, klarere Anfragefuehrung oder eine komplett neue Website."
+            required></textarea>
+
+          <p class="form-note">Mit dem Absenden oeffnet sich dein E-Mail-Programm mit einer vorbereiteten Nachricht an hello@buildit.studio.</p>
+          <button class="btn btn-primary" type="submit">Anfrage vorbereiten</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <a class="brand brand-footer" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">buildIT</span>
+      </a>
+      <p class="footer-copy">Direkter Einstieg fuer neue Projekte, Relaunches und strukturierte Website-Anfragen.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="contact.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+
+    <p class="footer-meta">&copy; <span id="year"></span> buildIT</p>
+  </footer>
+
+  <script type="module" src="src/scripts/app.js"></script>
+</body>
+
+</html>

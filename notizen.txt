@@ -1,0 +1,68 @@
+Website-Features
+https://www.s-ir.it/ diese webseite nheme ich mir al vorbild für meine, sie muss nciht so krass sein wie die aber ich will in die richtung gehen 
+
+websites:
+Rostock:
+- https://www.interhyp.de/ueber-interhyp/standorte/geschaeftsstelle-rostock/?gad_campaignid=22250860442&gbraid=0AAAAADtOZCd23HLZbElJiV4ga0hwusCNQ&wbraid=ClMKCAiAtfXMBhArEkMAwbQqvmZT6bAKIsl5iuNHKRCoq5qPr7EXkA2tEn93VtE8upphZY9GNI9dSk4wHCNvpVhU-F32diUc-J27ZqhTtv0rGgLSuQ
+- 
+MV:
+- https://www.steinartig.de/shopping_cart.php
+- https://www.birkebirke-schmuck.de/kontakt/
+- https://www.sport-schmuck-foto-tessin.de/schmuck.html
+- https://www.gutshaus-bobbin.de/index.php#/veranstaltungen/samstagsflohmaerkte.html
+- 
+
+
+Vorlagen: 
+- inneneinrcihtungen (Küchen etc. )https://fontbarcelona.com/en/
+- hotels, Apartments, (Allgemeij wohngelegenheiten): https://villas-tamarindo.com/
+- restaurant: https://florporto.com/
+- fashion, Kleidung : https://stitchingstories.nl/archive/ (kompliziert, längerer arbeitsaufwand)
+
+
+Insperation: 
+https://corentinbernadou.com/work/studies-in-motion
+
+Animation-Ideen für andere Webseiten: 
+
+Scroll-driven scale animation: "Implementiere eine scroll-getriebene Animation für eine Website mit folgenden Eigenschaften:
+– Ein Hero-Container ist initial zentriert im Viewport (100vh) und nimmt ca. 70–90 % der Viewport-Breite und -Höhe ein.
+– Beim Scrollen nach unten wird die Scrollposition kontinuierlich (scrubbed) auf CSS-Transforms gemappt.
+– Das Hero-Element wird mittels transform: scale() proportional verkleinert (z. B. von scale(1) zu scale(0.7)), ohne diskrete Keyframes.
+– Die Animation beginnt bei scrollY = 0 und endet nach einem definierten Scroll-Bereich (z. B. 500–800 px).
+– Während der Animation bleibt das Element visuell im Fokus (optional position: fixed oder Scroll-Trigger-Pinning).
+– Optional wird zusätzlich die Opacity leicht reduziert (1 → 0.6) und ein Border-Radius interpoliert (0 → 24px).
+– Nach Abschluss der Animation geht das Element in den normalen Dokumentfluss über (position: relative).
+– Der Hintergrund bleibt statisch, um eine Depth / Parallax-Anmutung zu erzeugen.
+– Die Animation soll performant (requestAnimationFrame oder ScrollTrigger), ruckelfrei und responsiv sein.
+– Bevorzuge moderne APIs oder Libraries wie GSAP ScrollTrigger oder CSS Scroll-Timeline, kein hartes Scroll-Hijacking." 
+
+Farben: - einheitlich farben hier https://coolors.co/242331-dd7373-3e796a-faa613-f7edf0
+
+
+
+Cookie-free Analytics (Idee + Formulierung)
+
+Idee:
+- Cookie-freies, anonymes Analytics-Tool (z. B. Plausible, Fathom, Umami self-hosted)
+- Keine Cookies, keine Nutzer-IDs, keine Cross-Site-Profile
+- Metriken: Seitenaufrufe, Verweildauer, Referrer, Geräteklasse, grobe Region
+- Kein Consent-Banner nötig (nur Hinweis in Datenschutzerklaerung)
+
+Kurztext (freundlich, modern):
+- "Wir messen anonym, wie oft diese Seite besucht wird und welche Inhalte helfen."
+- "Keine Cookies, keine Profile. Nur anonyme Statistik."
+- "Wenn du nicht möchtest, sag kurz Bescheid: [Opt-out-Link]."
+
+Alternative Mini-Box (optional):
+- Titel: "Anonyme Nutzungsstatistik"
+- Text: "Wir erfassen anonym, wie oft und wie lange Seiten besucht werden. Keine Cookies, keine IDs."
+- Link: "Mehr erfahren" -> Datenschutzerklaerung
+ 
+
+ GOOGLE:
+ . speed test: https://pagespeed.web.dev/
+
+ video generierungs prompt: 
+ - für jedes: This animation must be structurally consistent across frames because the output will be used as a frame-by-frame scroll animation on a website.
+Prioritize clean object continuity, stable geometry, and predictable motion over dramatic visual effects.

@@ -1,197 +1,198 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kinetic Flow</title>
+  <title>buildIT | Landingpage mit vier Szenen</title>
   <meta name="description"
-    content="High-end, high-performance websites for small and medium businesses. Precision design, clean engineering, and a premium digital presence." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260127-3" />
+    content="Landingpage mit vier Bereichen, identischer Szenen-Animation und austauschbaren Hintergrundwelten fuer buildIT." />
+  <script src="src/scripts/file-protocol-guard.js"></script>
+  <link rel="stylesheet" href="src/styles/main.css?v=8" />
 </head>
 
-<body>
-  <div class="matrix-intro" aria-hidden="true">
-    <canvas id="matrix-canvas"></canvas>
-    <div class="matrix-sheen"></div>
+<body class="is-landing-reference" id="landing-top">
+  <div class="site-bg" aria-hidden="true">
+    <div class="bg-orb bg-orb-a"></div>
+    <div class="bg-orb bg-orb-b"></div>
+    <div class="bg-grid"></div>
   </div>
-  <div class="bg-noise" aria-hidden="true"></div>
-  <div class="bg-beam beam-1" aria-hidden="true"></div>
-  <div class="bg-beam beam-2" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <div class="header-video-bg" aria-hidden="true">
-      <video src="pictures/video.mp4" autoplay muted loop playsinline></video>
-    </div>
-    <nav class="nav">
-      <div class="brand">Kinetic Flow</div>
-      <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#work">Proof</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <button class="btn btn-primary"><span>Request a project</span></button>
+  <header class="site-header site-header--landing">
+    <nav class="nav-wrap nav-wrap--landing" aria-label="Kopfleiste">
+      <a class="brand" href="#landing-top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">buildIT</span>
+      </a>
+
+      <a class="header-contact" href="contact.html">
+        <span class="header-contact__line" aria-hidden="true"></span>
+        <span>Kontaktiere uns</span>
+        <span aria-hidden="true">↗</span>
+      </a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-video-bg" aria-hidden="true">
-        <video src="pictures/video.mp4" autoplay muted loop playsinline></video>
-      </div>
-      <div class="hero-curtain" aria-hidden="true"></div>
-      <div class="hero-stage" data-parallax>
-        <div class="hero-content" data-depth="0.18">
-          <div class="eyebrow">Business Presence</div>
-          <h1 class="hero-title">Show your business [to] the world</h1>
-          <p class="lead">
-            A high‑end digital reveal that looks simple, elite, and unmistakably professional.
-          </p>
-          <div class="hero-cta">
-            <button class="btn btn-primary" type="button" data-link="work-approach.html" data-duration="520">
-              <span>See work approach</span>
-            </button>
+  <main id="top" class="landing-main">
+    <section class="landing-showcase" data-scene-root data-scene="warum-wir" aria-label="Landingpage Bereiche">
+      <div class="landing-shell" data-scene-shell>
+        <div class="landing-backgrounds" aria-hidden="true">
+          <div class="scene-background scene-background--warum-wir is-active" data-scene-bg="warum-wir">
+            <canvas class="flow-reveal-canvas" data-flow-reveal aria-hidden="true"></canvas>
+            <span class="scene-background__wash"></span>
+            <span class="scene-background__shape scene-background__shape--a"></span>
+            <span class="scene-background__shape scene-background__shape--b"></span>
+            <span class="scene-background__grid"></span>
           </div>
-          <div class="trust-strip">
-            <span>Credibility</span>
-            <span>Precision</span>
-            <span>Performance</span>
-            <span>Aesthetics</span>
+          <div class="scene-background scene-background--schablonen" data-scene-bg="schablonen">
+            <span class="scene-background__wash"></span>
+            <span class="scene-background__shape scene-background__shape--a"></span>
+            <span class="scene-background__shape scene-background__shape--b"></span>
+            <span class="scene-background__grid"></span>
+          </div>
+          <div class="scene-background scene-background--arbeit" data-scene-bg="arbeit">
+            <span class="scene-background__wash"></span>
+            <span class="scene-background__shape scene-background__shape--a"></span>
+            <span class="scene-background__shape scene-background__shape--b"></span>
+            <span class="scene-background__grid"></span>
+          </div>
+          <div class="scene-background scene-background--unser-team" data-scene-bg="unser-team">
+            <span class="scene-background__wash"></span>
+            <span class="scene-background__shape scene-background__shape--a"></span>
+            <span class="scene-background__shape scene-background__shape--b"></span>
+            <span class="scene-background__grid"></span>
           </div>
         </div>
 
-        <div class="hero-visual" aria-hidden="true" data-depth="0.34">
-          <canvas class="hero-samurai-canvas" aria-hidden="true"></canvas>
-        </div>
-      </div>
-      <div class="hero-halo" aria-hidden="true"></div>
-    </section>
+        <div class="landing-shell__body">
+          <div class="landing-copy-track">
+            <article class="scene-copy scene-copy--left is-active" id="warum-wir" data-scene-panel="warum-wir">
+              <p class="eyebrow scene-copy__eyebrow">Warum wir</p>
+              <h1 id="scene-title-warum-wir">KLARHEIT, BEVOR DAS CHAOS WIEDER ZUGREIFT.</h1>
+              <p class="scene-copy__text">
+                Beispieltext fuer diesen Abschnitt. Hier kannst du spaeter deine kurze Erklaerung
+                manuell einfuegen.
+              </p>
+            </article>
 
-    <section class="section problem">
-      <div class="section-inner">
-        <h2>Most SME websites are functional. Few are impressive.</h2>
-        <p>
-          Your website is your first sales conversation. It should look high-value, load fast,
-          and communicate trust in seconds.
-        </p>
-      </div>
-    </section>
+            <article class="scene-copy scene-copy--right" id="schablonen" data-scene-panel="schablonen">
+              <p class="eyebrow scene-copy__eyebrow">Schablonen</p>
+              <h1 id="scene-title-schablonen">SCHABLONEN MIT RICHTUNG STATT BAUKASTEN-GEFUEHL.</h1>
+              <p class="scene-copy__text">
+                Beispieltext fuer diesen Abschnitt. Hier kannst du spaeter deine kurze Erklaerung
+                manuell einfuegen.
+              </p>
+            </article>
 
-    <section class="section services" id="services">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2>Services built for credibility and growth</h2>
-          <p>Precision design, technical depth, and a business-first approach.</p>
-        </div>
-        <div class="grid three">
-          <article class="service-card reveal">
-            <h3>Web Design & Visual System</h3>
-            <p>Premium layout, typography, and motion — tailored to your brand.</p>
-          </article>
-          <article class="service-card reveal">
-            <h3>Development & Performance</h3>
-            <p>Fast, responsive, accessible. Built to scale with your business.</p>
-          </article>
-          <article class="service-card reveal">
-            <h3>Conversion & Trust</h3>
-            <p>Clear positioning, credible signals, and purposeful CTAs.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+            <article class="scene-copy scene-copy--left" id="arbeit" data-scene-panel="arbeit">
+              <p class="eyebrow scene-copy__eyebrow">Arbeiten</p>
+              <h1 id="scene-title-arbeit">ARBEIT, DIE NICHT STILLSTEHT, SONDERN NACH VORN ZIEHT.</h1>
+              <p class="scene-copy__text">
+                Beispieltext fuer diesen Abschnitt. Hier kannst du spaeter deine kurze Erklaerung
+                manuell einfuegen.
+              </p>
+            </article>
 
-    <section class="section process" id="process">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2>A clear, low-friction process</h2>
-        </div>
-        <div class="grid four">
-          <div class="step reveal">
-            <div class="step-number">01</div>
-            <h3>Discovery</h3>
-            <p>Your goals, your audience, your edge.</p>
+            <article class="scene-copy scene-copy--right" id="unser-team" data-scene-panel="unser-team">
+              <p class="eyebrow scene-copy__eyebrow">Unser Team</p>
+              <h1 id="scene-title-unser-team">RUHIGE KOEPFE. PRAEZISE BEWEGUNG. EIN KLARES TEAM.</h1>
+              <p class="scene-copy__text">
+                Beispieltext fuer diesen Abschnitt. Hier kannst du spaeter deine kurze Erklaerung
+                manuell einfuegen.
+              </p>
+            </article>
           </div>
-          <div class="step reveal">
-            <div class="step-number">02</div>
-            <h3>Design</h3>
-            <p>A visual system that feels premium and precise.</p>
-          </div>
-          <div class="step reveal">
-            <div class="step-number">03</div>
-            <h3>Build</h3>
-            <p>Clean code, performance, and polish.</p>
-          </div>
-          <div class="step reveal">
-            <div class="step-number">04</div>
-            <h3>Launch</h3>
-            <p>Production-ready, reliable, and measurable.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section proof" id="work">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2>Signals that move the needle</h2>
-        </div>
-        <div class="grid two">
-          <div class="proof-card reveal">
-            <div class="proof-value">30%</div>
-            <p>More inbound inquiries after redesign</p>
+          <div class="landing-stage-shell">
+            <div class="hero-stage landing-stage" data-scene-stage aria-hidden="true">
+              <div class="scene-progress-track" aria-hidden="true">
+                <article class="scene-progress scene-progress--warum-wir is-active" data-scene-progress="warum-wir">
+                  <span class="scene-progress__halo"></span>
+                  <div class="landing-why-world" data-landing-why-world data-scene-state="fallback"
+                    data-asset-state="idle" data-look-state="idle"
+                    data-scene-camera-source="runtime" data-scene-asset-max-dimension="6.6"
+                    data-scene-asset-url="/public/models/landing-why/park_world.glb">
+                    <div class="landing-why-world__fallback"></div>
+                    <div class="landing-why-world__canvas" data-landing-why-world-canvas></div>
+                    <div class="landing-why-world__cursor" aria-hidden="true"></div>
+                    <div class="landing-why-world__shell"></div>
+                  </div>
+                  <span class="scene-progress__beam"></span>
+                  <span class="scene-progress__portal"></span>
+                  <span class="scene-progress__frame scene-progress__frame--lead"></span>
+                  <span class="scene-progress__frame scene-progress__frame--mid"></span>
+                  <span class="scene-progress__frame scene-progress__frame--tail"></span>
+                  <span class="scene-progress__caption">01 / Cursor leicht bewegen und umschauen.</span>
+                </article>
+
+                <article class="scene-progress scene-progress--schablonen" data-scene-progress="schablonen">
+                  <span class="scene-progress__halo"></span>
+                  <span class="scene-progress__beam"></span>
+                  <span class="scene-progress__portal"></span>
+                  <span class="scene-progress__frame scene-progress__frame--lead"></span>
+                  <span class="scene-progress__frame scene-progress__frame--mid"></span>
+                  <span class="scene-progress__frame scene-progress__frame--tail"></span>
+                  <span class="scene-progress__caption">02 / Scroll, um dir Vorlagen anzuschauen</span>
+                </article>
+
+                <article class="scene-progress scene-progress--arbeit" data-scene-progress="arbeit">
+                  <span class="scene-progress__halo"></span>
+                  <span class="scene-progress__beam"></span>
+                  <span class="scene-progress__portal"></span>
+                  <span class="scene-progress__frame scene-progress__frame--lead"></span>
+                  <span class="scene-progress__frame scene-progress__frame--mid"></span>
+                  <span class="scene-progress__frame scene-progress__frame--tail"></span>
+                  <span class="scene-progress__caption">03 / Scrolle, um fertige Produkte zu sehen.</span>
+                </article>
+
+                <article class="scene-progress scene-progress--unser-team" data-scene-progress="unser-team">
+                  <span class="scene-progress__halo"></span>
+                  <span class="scene-progress__beam"></span>
+                  <span class="scene-progress__portal"></span>
+                  <span class="scene-progress__frame scene-progress__frame--lead"></span>
+                  <span class="scene-progress__frame scene-progress__frame--mid"></span>
+                  <span class="scene-progress__frame scene-progress__frame--tail"></span>
+                  <span class="scene-progress__caption">04 / srolle, um dir unser Team anzuschauen
+                  </span>
+                </article>
+              </div>
+            </div>
           </div>
-          <div class="proof-card reveal">
-            <div class="proof-value">&lt;1s</div>
-            <p>Target load time for a premium first impression</p>
-          </div>
         </div>
-        <div class="proof-note">
-          Results depend on industry and positioning, but the goal is always the same: credible,
-          premium perception.
-        </div>
-        <div class="proof-cta">
-          <button class="btn btn-primary btn-lg" type="button" data-link="work-approach.html">
-            <span>See work approach</span>
+
+        <div class="landing-switcher glass-card" aria-label="Landingpage Unterbereiche">
+          <button class="scene-arrow" type="button" data-scene-step="-1" aria-label="Vorherigen Bereich anzeigen">
+            <span aria-hidden="true">&lsaquo;</span>
           </button>
-        </div>
-      </div>
-    </section>
 
-    <section class="section cta" id="contact">
-      <div class="section-inner">
-        <div class="cta-panel">
-          <h2>If your business is serious, your website should be too.</h2>
-          <p>Tell me what you need. I’ll reply with a clear scope and timeline.</p>
-          <div class="cta-actions">
-            <button class="btn btn-primary"><span>Request a project</span></button>
-            <button class="btn btn-ghost"><span>Email a brief</span></button>
+          <div class="scene-tabs" role="tablist" aria-label="Landingpage Bereiche">
+            <button class="scene-tab is-active" type="button" role="tab" aria-selected="true" tabindex="0"
+              data-scene-target="warum-wir">Warum Wir</button>
+            <button class="scene-tab" type="button" role="tab" aria-selected="false" tabindex="-1"
+              data-scene-target="schablonen">Schablonen</button>
+            <button class="scene-tab" type="button" role="tab" aria-selected="false" tabindex="-1"
+              data-scene-target="arbeit">Arbeiten</button>
+            <button class="scene-tab" type="button" role="tab" aria-selected="false" tabindex="-1"
+              data-scene-target="unser-team">Unser Team</button>
           </div>
+
+          <button class="scene-arrow" type="button" data-scene-step="1" aria-label="Naechsten Bereich anzeigen">
+            <span aria-hidden="true">&rsaquo;</span>
+          </button>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-text">Made by Johannes Benedict. All rights reserved.</div>
-    <div class="footer-nav">
-      <div class="footer-group">
-        <div class="footer-title"></div>
-        <div class="footer-links">
-          <a href="impressum.html" data-link="impressum.html" data-duration="1000">Impressum</a>
-          <a href="datenschutz.html" data-link="datenschutz.html" data-duration="1000">Datenschutz</a>
-          <a href="privacy.html" data-link="privacy.html" data-duration="1000">Privacy</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js?v=20260127-3"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "/public/vendor/three/three.module.js",
+        "three/addons/": "/node_modules/three/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="src/scripts/app.js?v=32"></script>
 </body>
 
 </html>
