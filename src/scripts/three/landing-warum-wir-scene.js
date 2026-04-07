@@ -1,4 +1,4 @@
-import * as THREE from "/public/vendor/three/three.module.js";
+import * as THREE from "three";
 import { disposeObject } from "./night-sky-world.js";
 import { clamp } from "./three-utils.js";
 
@@ -454,7 +454,7 @@ async function loadLookAroundAsset({
     return await new Promise((resolve) => {
       const loader = new GLTFLoader();
       const dracoLoader = new DRACOLoader();
-      dracoLoader.setDecoderPath("/public/vendor/three/draco/gltf/");
+      dracoLoader.setDecoderPath(new URL("../../../public/vendor/three/draco/gltf/", import.meta.url).href);
       loader.setDRACOLoader(dracoLoader);
 
       loader.load(

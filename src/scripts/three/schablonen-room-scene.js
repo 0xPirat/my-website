@@ -1,4 +1,4 @@
-import * as THREE from "/public/vendor/three/three.module.js";
+import * as THREE from "three";
 import { disposeObject3D as disposeObject } from "./three-utils.js";
 
 function createSurfaceMaterial({

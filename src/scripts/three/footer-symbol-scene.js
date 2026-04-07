@@ -1,7 +1,7 @@
-import * as THREE from "/public/vendor/three/three.module.js";
+import * as THREE from "three";
 import { disposeObject3D } from "./three-utils.js";
 
-const LOGO_TEXTURE_URL = "/public/media/branding/buildit-logo-metallic-alpha.png";
+const LOGO_TEXTURE_URL = new URL("../../../public/media/branding/buildit-logo-metallic-alpha.png", import.meta.url).href;
 const LOGO_ASPECT_RATIO = 600 / 542;
 const LOGO_LAYER_SIZE = Object.freeze({
   width: 1.56,

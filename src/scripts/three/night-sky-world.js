@@ -1,4 +1,4 @@
-import * as THREE from "/public/vendor/three/three.module.js";
+import * as THREE from "three";
 import { disposeMaterial, disposeObject3D } from "./three-utils.js";
 
 const TEXTURE_KEYS = [
@@ -19,7 +19,7 @@ const TEXTURE_KEYS = [
   "specularMap",
 ];
 
-export const NIGHT_SKY_BUST_TEXTURE_URL = "/public/media/images/night-sky-bust-reference.jpg";
+export const NIGHT_SKY_BUST_TEXTURE_URL = new URL("../../../public/media/images/night-sky-bust-reference.jpg", import.meta.url).href;
 
 function createSurfaceMaterial({
   color,

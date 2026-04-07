@@ -1,7 +1,7 @@
-import * as THREE from "/public/vendor/three/three.module.js";
+import * as THREE from "three";
 import { clamp, disposeObject3D } from "./three-utils.js";
 
-const DEFAULT_MODEL_URL = "/public/models/warum-wir/geschweifte-klammer-3d.glb";
+const DEFAULT_MODEL_URL = new URL("../../../public/models/warum-wir/geschweifte-klammer-3d.glb", import.meta.url).href;
 const CAMERA_HALF_HEIGHT = 5.4;
 const MAX_PIXEL_RATIO = 1.5;
 const raycaster = new THREE.Raycaster();
