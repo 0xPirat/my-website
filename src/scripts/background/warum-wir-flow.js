@@ -1,4 +1,4 @@
-const VIDEO_URL = "/pictures/elements/backgrounds_landingpage/morionbackground.mp4";
+const VIDEO_URL = new URL("../../../pictures/elements/backgrounds_landingpage/morionbackground.mp4", import.meta.url).href;
 const BG_WHITE = "#ffffff";
 const STAMP_SPACING = 18;
 const STAMP_MIN_INTERVAL_MS = 44;
