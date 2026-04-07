@@ -1,0 +1,223 @@
+/* ============================================================
+   BASE — CSS Tokens, Font-Faces, Reset, Utilities
+   Geladen von: ALLEN Seiten
+   ============================================================ */
+
+:root {
+  --bg: #070918;
+  --bg-deep: #030510;
+  --panel: rgba(13, 17, 43, 0.74);
+  --panel-strong: rgba(8, 11, 29, 0.92);
+  --panel-soft: rgba(22, 28, 68, 0.6);
+  --line: rgba(171, 181, 255, 0.18);
+  --line-strong: rgba(214, 220, 255, 0.34);
+  --text: #eef2ff;
+  --muted: #9ea7d1;
+  --muted-strong: #d7ddf9;
+  --accent: #8a7cff;
+  --accent-soft: #bea9ff;
+  --accent-strong: #dfe5ff;
+  --accent-deep: #232a6a;
+  --prism-gradient: linear-gradient(135deg, #6759ff 0%, #a88eff 48%, #dfe5ff 100%);
+  --prism-gradient-soft: linear-gradient(135deg, rgba(103, 89, 255, 0.34) 0%, rgba(168, 142, 255, 0.18) 48%, rgba(223, 229, 255, 0.08) 100%);
+  --shadow: 0 32px 90px rgba(2, 4, 14, 0.56);
+  --shadow-soft: 0 22px 64px rgba(6, 8, 24, 0.42);
+  --radius-xl: 34px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --max: 1180px;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src:
+    url("../../assets/fonts/Satoshi-Variable.ttf") format("truetype"),
+    url("../../assets/fonts/Satoshi-Regular.otf") format("opentype");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("../../assets/fonts/Satoshi-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 8%, rgba(88, 98, 210, 0.14), transparent 24%),
+    radial-gradient(circle at 84% 10%, rgba(223, 229, 255, 0.08), transparent 20%),
+    radial-gradient(circle at 50% 110%, rgba(52, 66, 160, 0.18), transparent 34%),
+    linear-gradient(180deg, #060912 0%, #020307 52%, #000 100%);
+  font-family: "Satoshi", "Avenir Next", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+html.is-file-protocol,
+html.is-file-protocol body {
+  min-height: 100%;
+}
+
+html.is-file-protocol body {
+  overflow: hidden;
+}
+
+html.is-file-protocol body > :not(.protocol-gate) {
+  display: none !important;
+}
+
+.protocol-gate {
+  display: none;
+  min-height: 100vh;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 30;
+}
+
+html.is-file-protocol .protocol-gate {
+  display: flex;
+}
+
+.protocol-gate__panel {
+  width: min(42rem, 100%);
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  border: 1px solid rgba(214, 220, 255, 0.16);
+  background:
+    linear-gradient(180deg, rgba(11, 15, 38, 0.94), rgba(5, 8, 24, 0.96)),
+    var(--prism-gradient-soft);
+  box-shadow: 0 28px 72px rgba(2, 4, 14, 0.58);
+  clip-path: polygon(0 0, 92% 0, 100% 10%, 100% 100%, 8% 100%, 0 90%);
+}
+
+.protocol-gate__lead,
+.protocol-gate__note {
+  max-width: 38rem;
+  color: var(--muted-strong);
+}
+
+.protocol-gate__meta {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.protocol-gate__item {
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(171, 181, 255, 0.14);
+  background: rgba(10, 13, 34, 0.8);
+  clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 1rem, 100% 100%, 1rem 100%, 0 calc(100% - 1rem));
+}
+
+.protocol-gate__label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.protocol-gate__url {
+  color: var(--accent-strong);
+  word-break: break-all;
+}
+
+.protocol-gate__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.65rem;
+}
+
+.protocol-gate code {
+  padding: 0.14rem 0.4rem;
+  border-radius: 999px;
+  background: rgba(223, 229, 255, 0.08);
+  color: var(--accent-strong);
+}
+
+@media (max-width: 640px) {
+  .protocol-gate__panel,
+  .protocol-gate__item {
+    clip-path: none;
+    border-radius: var(--radius-lg);
+  }
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+}
+
+body::before {
+  inset: -12% 52% 34% -8%;
+  background: linear-gradient(130deg, rgba(111, 99, 255, 0.3), rgba(223, 229, 255, 0.06));
+  clip-path: polygon(14% 0, 100% 0, 84% 100%, 0 100%);
+  opacity: 0.5;
+  z-index: -6;
+  transform: rotate(-10deg);
+}
+
+body::after {
+  inset: 0;
+  background:
+    radial-gradient(circle at center, transparent 44%, rgba(1, 2, 8, 0.3) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 20%);
+  z-index: -7;
+}
+
+img,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

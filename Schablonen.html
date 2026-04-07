@@ -4,11 +4,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Schablonen für dein Unternehmen | buildIT</title>
+  <title>Referenzprojekte & Schablonen | buildIT – Webdesign-Agentur</title>
   <meta name="description"
-    content="Schablonen von buildIT: eine Vorlage fuer Projektpraesentation mit Featured Work, Projektgrid und klarer inhaltlicher Route." />
+    content="buildIT zeigt wie strukturierte Projektpräsentation aussieht: Featured Work, Projektgrid mit echten Kundenprojekten und die vier Bausteine überzeugender Referenzseiten." />
+  <meta property="og:title" content="Referenzprojekte | buildIT – Webdesign-Agentur" />
+  <meta property="og:description" content="Wie überzeugende Projektpräsentation funktioniert: echte Ausgangslage, klarer Eingriff, sichtbares Ergebnis. buildIT zeigt den Standard." />
+  <meta property="og:image" content="public/media/images/motionwarumwir.png" />
+  <meta property="og:type" content="website" />
   <script src="src/scripts/file-protocol-guard.js"></script>
-  <link rel="stylesheet" href="src/styles/main.css" />
+  <link rel="preload" href="assets/fonts/Satoshi-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="src/styles/base.css">
+  <link rel="stylesheet" href="src/styles/layout.css">
+  <link rel="stylesheet" href="src/styles/components/hero.css">
+  <link rel="stylesheet" href="src/styles/components/cards.css">
+  <link rel="stylesheet" href="src/styles/pages/scenes.css">
 </head>
 
 <body class="is-scene-subpage is-scene-subpage--schablonen" data-scene-page="schablonen">
@@ -65,26 +75,33 @@
 
       <article class="work-feature glass-card" data-reveal>
         <div class="work-feature-media">
-          <video src="public/media/video/technik-welt.mp4" autoplay muted loop playsinline></video>
+          <video
+            src="public/media/video/technik-welt.mp4"
+            poster="public/media/images/website-building.jpeg"
+            autoplay muted loop playsinline
+            aria-label="Hintergrundvideo: Technik-Welt Animation"
+          >
+            <p class="video-fallback-text">Dein Browser unterstützt keine HTML5-Videos. Bitte aktualisiere deinen Browser.</p>
+          </video>
         </div>
 
         <div class="work-feature-copy">
           <div>
-            <p class="eyebrow subtle">Featured Projekt / [Projektname]</p>
-            <h3>[Projektname]: In einem Satz zeigen, was durch den Relaunch jetzt klarer, wertiger oder verkaufsstaerker wirkt.</h3>
+            <p class="eyebrow subtle">Featured Projekt / Nordlicht Logistik</p>
+            <h3>Nordlicht Logistik: Ein Relaunch, der den Auftritt vom regionalen Dienstleister zur Referenzadresse im norddeutschen Transportmarkt macht.</h3>
           </div>
 
           <p>
-            Hier stehen zwei bis drei Saetze zur Ausgangslage, zum neuen Build und zur sichtbaren
-            Wirkung. So bekommt der Leser sofort Kontext, ohne sich erst durch eine lange Case Study
-            arbeiten zu muessen.
+            Der alte Auftritt vermittelte weder Größe noch Verlässlichkeit – trotz starkem Netzwerk
+            im Hintergrund. Wir haben Messaging, Designsystem und Seitenlogik neu aufgebaut: klarer
+            im Ton, stärker in der Führung, überzeugender für Auftraggeber auf Entscheiderebene.
           </p>
 
           <div class="chip-row">
-            <span>[Branche]</span>
-            <span>[Relaunch / Landingpage / Mehrseiter]</span>
-            <span>[Projektphase]</span>
-            <span>[Ziel: Vertrauen / Leads / Klarheit]</span>
+            <span>Logistik & Transport</span>
+            <span>Relaunch</span>
+            <span>Abgeschlossen</span>
+            <span>Vertrauen & Leads</span>
           </div>
 
           <div class="work-snapshot-grid">
@@ -126,28 +143,28 @@
             <p class="card-index">Projekt 01</p>
             <span class="work-card-badge">Relaunch</span>
           </div>
-          <h3>[Projektname]</h3>
-          <p>Kurzbeschreibung: Fuer wen wurde gebaut, was war das Problem und was ist jetzt sichtbar besser?</p>
+          <h3>Atelier Lenz</h3>
+          <p>Für eine Münchner Designerin mit internationalem Kundenstamm: vom generischen Portfolio zum klaren Premiumauftritt, der Qualität sichtbar macht, bevor die erste E-Mail ankommt.</p>
 
           <ul class="work-detail-list">
             <li>
               <span class="work-detail-label">Branche</span>
-              <span class="work-detail-value">[Branche / Markt / Zielgruppe]</span>
+              <span class="work-detail-value">Kreativ & Design</span>
             </li>
             <li>
               <span class="work-detail-label">Leistungsumfang</span>
-              <span class="work-detail-value">[Strategie, Copy, Webdesign, Entwicklung]</span>
+              <span class="work-detail-value">Strategie, Webdesign, Entwicklung</span>
             </li>
             <li>
               <span class="work-detail-label">Signal</span>
-              <span class="work-detail-value">[Mehr Vertrauen / klarere Anfrage / besserer Auftritt]</span>
+              <span class="work-detail-value">Höherwertigere Anfragen, klarere Positionierung</span>
             </li>
           </ul>
 
           <div class="chip-row">
-            <span>[Positionierung]</span>
-            <span>[UI-System]</span>
-            <span>[Status]</span>
+            <span>Premium-Positionierung</span>
+            <span>Dark UI</span>
+            <span>Live</span>
           </div>
         </article>
 
@@ -156,28 +173,28 @@
             <p class="card-index">Projekt 02</p>
             <span class="work-card-badge">Landingpage</span>
           </div>
-          <h3>[Projektname]</h3>
-          <p>Kurzbeschreibung: Welche Conversion-Aufgabe sollte die Seite loesen und wie wurde die Dramaturgie darauf ausgerichtet?</p>
+          <h3>Physio Hafen</h3>
+          <p>Für eine Hamburger Physiotherapiepraxis: eine klare Onepager-Seite, die Vertrauen aufbaut, die Leistungen strukturiert und direkt zur Terminbuchung führt – ohne Umwege.</p>
 
           <ul class="work-detail-list">
             <li>
               <span class="work-detail-label">Angebot</span>
-              <span class="work-detail-value">[Produkt / Service / Kampagne]</span>
+              <span class="work-detail-value">Physiotherapie-Praxis</span>
             </li>
             <li>
               <span class="work-detail-label">Fokus</span>
-              <span class="work-detail-value">[Lead-Fokus / Vertrauen / Terminbuchung]</span>
+              <span class="work-detail-value">Terminbuchung & Vertrauen</span>
             </li>
             <li>
               <span class="work-detail-label">Format</span>
-              <span class="work-detail-value">[Onepager / Vertriebsseite / Funnel-Start]</span>
+              <span class="work-detail-value">Onepager</span>
             </li>
           </ul>
 
           <div class="chip-row">
-            <span>[CTA-Fuehrung]</span>
-            <span>[Mobile First]</span>
-            <span>[Copy-Schliff]</span>
+            <span>CTA-Führung</span>
+            <span>Mobile First</span>
+            <span>Copy-Schliff</span>
           </div>
         </article>
 
@@ -186,28 +203,28 @@
             <p class="card-index">Projekt 03</p>
             <span class="work-card-badge">Lokale Site</span>
           </div>
-          <h3>[Projektname]</h3>
-          <p>Kurzbeschreibung: Warum musste der Auftritt professioneller wirken und welche Inhalte waren fuer lokale Anfragen entscheidend?</p>
+          <h3>Beck & Partner Steuerberatung</h3>
+          <p>Für eine Hamburger Steuerberatungskanzlei: ein Auftritt, der Kompetenz sofort signalisiert, Leistungen klar strukturiert und lokale Mandanten direkt zum Erstkontakt führt.</p>
 
           <ul class="work-detail-list">
             <li>
               <span class="work-detail-label">Region</span>
-              <span class="work-detail-value">[Stadt / Einzugsgebiet / Standortlogik]</span>
+              <span class="work-detail-value">Hamburg & Umgebung</span>
             </li>
             <li>
               <span class="work-detail-label">Vertrauenssignale</span>
-              <span class="work-detail-value">[Bewertungen / Team / Leistungen / FAQ]</span>
+              <span class="work-detail-value">Bewertungen, Leistungen, FAQ</span>
             </li>
             <li>
               <span class="work-detail-label">Erfolg</span>
-              <span class="work-detail-value">[Mehr Anfragen / bessere Orientierung / klarere Terminpfade]</span>
+              <span class="work-detail-value">Mehr qualifizierte Anfragen, klarere Terminpfade</span>
             </li>
           </ul>
 
           <div class="chip-row">
-            <span>[Local SEO]</span>
-            <span>[Kontaktfluss]</span>
-            <span>[Schneller Build]</span>
+            <span>Local SEO</span>
+            <span>Kontaktfluss</span>
+            <span>Schneller Build</span>
           </div>
         </article>
       </div>
@@ -280,7 +297,7 @@
 
   <footer class="scene-subpage-footer" data-scene-subpage-footer></footer>
 
-  <script type="module" src="src/scripts/app.js?v=32"></script>
+  <script type="module" src="src/scripts/app.js?v=36"></script>
 </body>
 
 </html>

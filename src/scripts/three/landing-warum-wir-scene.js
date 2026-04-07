@@ -1,13 +1,10 @@
 import * as THREE from "/public/vendor/three/three.module.js";
 import { disposeObject } from "./night-sky-world.js";
+import { clamp } from "./three-utils.js";
 
 const DEFAULT_ASSET_MAX_DIMENSION = 6.6;
 const DEFAULT_EMBEDDED_CAMERA_LOOK_DISTANCE = 4.2;
 const WORLD_UP = new THREE.Vector3(0, 1, 0);
-
-function clamp(value, min, max) {
-  return Math.min(max, Math.max(min, value));
-}
 
 function parsePositiveNumber(value, fallback) {
   const parsed = Number.parseFloat(value);
@@ -457,7 +454,7 @@ async function loadLookAroundAsset({
     return await new Promise((resolve) => {
       const loader = new GLTFLoader();
       const dracoLoader = new DRACOLoader();
-      dracoLoader.setDecoderPath("/node_modules/three/examples/jsm/libs/draco/gltf/");
+      dracoLoader.setDecoderPath("/public/vendor/three/draco/gltf/");
       loader.setDRACOLoader(dracoLoader);
 
       loader.load(
@@ -540,6 +537,24 @@ async function loadLookAroundAsset({
     console.warn("[landing-why-world] GLTFLoader konnte nicht initialisiert werden.", error);
     return () => {};
   }
+}
+
+function showSceneFallback(container, label = "3D-Szene nicht verfügbar") {
+  if (!container || container.querySelector(".scene-error-fallback")) {
+    return;
+  }
+
+  if (getComputedStyle(container).position === "static") {
+    container.style.position = "relative";
+  }
+
+  const el = document.createElement("div");
+  el.className = "scene-error-fallback";
+  el.setAttribute("aria-label", label);
+  el.innerHTML =
+    `<span class="scene-error-fallback__icon" aria-hidden="true">◇</span>` +
+    `<span>${label}</span>`;
+  container.appendChild(el);
 }
 
 export function initLandingWarumWirScene({ reduceMotion = false } = {}) {
@@ -850,6 +865,7 @@ export function initLandingWarumWirScene({ reduceMotion = false } = {}) {
   } catch (error) {
     root.dataset.sceneState = "fallback";
     root.dataset.assetState = "unavailable";
+    showSceneFallback(canvasHost, "3D-Szene nicht verfügbar");
   }
 
   resizeRenderer();

@@ -1,4 +1,5 @@
 import * as THREE from "/public/vendor/three/three.module.js";
+import { disposeObject3D } from "./three-utils.js";
 
 const LOGO_TEXTURE_URL = "/public/media/branding/buildit-logo-metallic-alpha.png";
 const LOGO_ASPECT_RATIO = 600 / 542;
@@ -6,40 +7,6 @@ const LOGO_LAYER_SIZE = Object.freeze({
   width: 1.56,
   height: 1.56 * LOGO_ASPECT_RATIO,
 });
-
-function disposeMaterial(material, disposedTextures) {
-  if (!material) {
-    return;
-  }
-
-  if (Array.isArray(material)) {
-    material.forEach((entry) => disposeMaterial(entry, disposedTextures));
-    return;
-  }
-
-  Object.values(material).forEach((value) => {
-    if (value && value.isTexture && !disposedTextures.has(value.uuid)) {
-      disposedTextures.add(value.uuid);
-      value.dispose();
-    }
-  });
-
-  material.dispose();
-}
-
-function disposeObject3D(object) {
-  const disposedTextures = new Set();
-
-  object.traverse((child) => {
-    if (child.geometry) {
-      child.geometry.dispose();
-    }
-
-    if (child.material) {
-      disposeMaterial(child.material, disposedTextures);
-    }
-  });
-}
 
 function createStageShadow() {
   const shadow = new THREE.Mesh(
@@ -157,6 +124,24 @@ function createLogoModel(renderer) {
   return group;
 }
 
+function showSceneFallback(container, label = "3D-Szene nicht verfügbar") {
+  if (!container || container.querySelector(".scene-error-fallback")) {
+    return;
+  }
+
+  if (getComputedStyle(container).position === "static") {
+    container.style.position = "relative";
+  }
+
+  const el = document.createElement("div");
+  el.className = "scene-error-fallback";
+  el.setAttribute("aria-label", label);
+  el.innerHTML =
+    `<span class="scene-error-fallback__icon" aria-hidden="true">◇</span>` +
+    `<span>${label}</span>`;
+  container.appendChild(el);
+}
+
 export function initFooterSymbolScene({ reduceMotion = false } = {}) {
   const mountNode = document.querySelector("[data-footer-symbol-stage], #footer-symbol-stage");
 
@@ -177,6 +162,7 @@ export function initFooterSymbolScene({ reduceMotion = false } = {}) {
   } catch (error) {
     mountNode.dataset.sceneState = "unavailable";
     mountNode.setAttribute("aria-hidden", "true");
+    showSceneFallback(mountNode, "Logo-Szene nicht verfügbar");
     return;
   }
 

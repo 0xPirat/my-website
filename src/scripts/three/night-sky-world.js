@@ -1,4 +1,5 @@
 import * as THREE from "/public/vendor/three/three.module.js";
+import { disposeMaterial, disposeObject3D } from "./three-utils.js";
 
 const TEXTURE_KEYS = [
   "alphaMap",
@@ -160,40 +161,11 @@ function addMotionTarget(targets, object, config = {}) {
   });
 }
 
-export function disposeMaterial(material) {
-  if (!material) {
-    return;
-  }
-
-  if (Array.isArray(material)) {
-    material.forEach(disposeMaterial);
-    return;
-  }
-
-  TEXTURE_KEYS.forEach((key) => {
-    if (material[key]?.dispose) {
-      material[key].dispose();
-    }
-  });
-
-  material.dispose();
-}
-
-export function disposeObject(object) {
-  if (!object) {
-    return;
-  }
-
-  object.traverse((child) => {
-    if (child.geometry?.dispose) {
-      child.geometry.dispose();
-    }
-
-    if (child.material) {
-      disposeMaterial(child.material);
-    }
-  });
-}
+// disposeMaterial und disposeObject3D kommen jetzt aus three-utils.js.
+// disposeObject wird als Alias re-exportiert, damit bestehende Imports
+// (landing-warum-wir-scene.js, warum-wir-hero-scene.js) weiterhin funktionieren.
+export { disposeMaterial };
+export const disposeObject = disposeObject3D;
 
 export function loadNightSkyBustTexture({ renderer, material }) {
   const textureLoader = new THREE.TextureLoader();

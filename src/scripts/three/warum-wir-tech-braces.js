@@ -1,4 +1,5 @@
 import * as THREE from "/public/vendor/three/three.module.js";
+import { clamp, disposeObject3D } from "./three-utils.js";
 
 const DEFAULT_MODEL_URL = "/public/models/warum-wir/geschweifte-klammer-3d.glb";
 const CAMERA_HALF_HEIGHT = 5.4;
@@ -6,48 +7,8 @@ const MAX_PIXEL_RATIO = 1.5;
 const raycaster = new THREE.Raycaster();
 const projectedPoint = new THREE.Vector3();
 
-function clamp(value, min, max) {
-  return Math.min(max, Math.max(min, value));
-}
-
 function damp(current, target, factor, delta) {
   return current + (target - current) * (1 - Math.pow(1 - factor, delta));
-}
-
-function disposeMaterial(material, disposedTextures) {
-  if (!material) {
-    return;
-  }
-
-  if (Array.isArray(material)) {
-    material.forEach((entry) => disposeMaterial(entry, disposedTextures));
-    return;
-  }
-
-  Object.values(material).forEach((value) => {
-    if (value?.isTexture && !disposedTextures.has(value.uuid)) {
-      disposedTextures.add(value.uuid);
-      value.dispose();
-    }
-  });
-
-  material.dispose();
-}
-
-function disposeObject3D(object) {
-  if (!object) {
-    return;
-  }
-
-  const disposedTextures = new Set();
-
-  object.traverse((child) => {
-    child.geometry?.dispose?.();
-
-    if (child.material) {
-      disposeMaterial(child.material, disposedTextures);
-    }
-  });
 }
 
 function tuneModelMaterials(object) {
@@ -88,7 +49,7 @@ function tuneModelMaterials(object) {
 }
 
 async function loadBracePrototype(assetUrl) {
-  const { GLTFLoader } = await import("/node_modules/three/examples/jsm/loaders/GLTFLoader.js");
+  const { GLTFLoader } = await import("three/addons/loaders/GLTFLoader.js");
 
   return new Promise((resolve, reject) => {
     const loader = new GLTFLoader();
@@ -177,28 +138,35 @@ function createBraceRig({ id, mirrored, phase, template, size }) {
     impulseAngularVelocity: new THREE.Vector3(),
     radiusPx: 120,
     lastHitAt: -Infinity,
+    inProximity: false,
   };
 }
 
-function applyKick(brace, pointer, time) {
-  if (time - brace.lastHitAt < 110) {
+function applyKick(brace, pointer, time, { strength = 1.0 } = {}) {
+  if (time - brace.lastHitAt < 220) {
+    return;
+  }
+
+  // Only kick when cursor moves fast enough — prevents jitter from micro-movements
+  const moveSpeed = Math.hypot(pointer.vx, pointer.vy);
+  if (moveSpeed < 3.5) {
     return;
   }
 
   brace.lastHitAt = time;
 
   const side = brace.id === "left" ? -1 : 1;
-  const speed = clamp(Math.hypot(pointer.vx, pointer.vy) / 26, 0.3, 1.55);
-  const swingX = clamp(pointer.vx / 34, -1.4, 1.4);
-  const swingY = clamp(pointer.vy / 34, -1.25, 1.25);
+  const speed = clamp(moveSpeed / 30, 0.3, 1.4) * strength;
+  const swingX = clamp(pointer.vx / 36, -1.2, 1.2);
+  const swingY = clamp(pointer.vy / 36, -1.0, 1.0);
 
-  brace.impulseVelocity.x += (side * 0.12 + swingX * 0.06) * speed;
-  brace.impulseVelocity.y += (-swingY * 0.04) * speed;
-  brace.impulseVelocity.z += 0.04 * speed;
+  brace.impulseVelocity.x += (side * 0.16 + swingX * 0.08) * speed;
+  brace.impulseVelocity.y += (-swingY * 0.06) * speed;
+  brace.impulseVelocity.z += 0.10 * speed;
 
-  brace.impulseAngularVelocity.x += swingY * 0.1 * speed;
-  brace.impulseAngularVelocity.y += (side * 0.18 + swingX * 0.09) * speed;
-  brace.impulseAngularVelocity.z += (side * 0.08 + swingX * 0.04) * speed;
+  brace.impulseAngularVelocity.x += swingY * 0.13 * speed;
+  brace.impulseAngularVelocity.y += (side * 0.22 + swingX * 0.12) * speed;
+  brace.impulseAngularVelocity.z += (side * 0.10 + swingX * 0.06) * speed;
 }
 
 export function initWarumWirTechBraces({ reduceMotion = false } = {}) {
@@ -360,12 +328,8 @@ export function initWarumWirTechBraces({ reduceMotion = false } = {}) {
       return;
     }
 
-    const hoveredBraceId = root.dataset.techBracesHover;
-    const hoveredBrace = braces.find((brace) => brace.id === hoveredBraceId);
-
-    if (hoveredBrace) {
-      applyKick(hoveredBrace, pointer, performance.now());
-    }
+    // No kicks while hovering — the smooth hoverOffset handles active cursor interaction.
+    // Only apply a kick on a fast swipe (cursor moves through quickly without dwelling).
   };
 
   const handlePointerLeave = () => {
@@ -390,7 +354,10 @@ export function initWarumWirTechBraces({ reduceMotion = false } = {}) {
     }
 
     braces.forEach((brace) => {
-      brace.anchor.getWorldPosition(projectedPoint);
+      // Use base position (not animated position) to avoid feedback-loop jitter:
+      // if we used the live anchor position, moving the brace away from the cursor
+      // would change dx/dy → new repel target → brace moves again → oscillation.
+      projectedPoint.copy(brace.basePosition);
       projectedPoint.project(camera);
 
       const screenX = (projectedPoint.x * 0.5 + 0.5) * rootBounds.width;
@@ -398,11 +365,24 @@ export function initWarumWirTechBraces({ reduceMotion = false } = {}) {
       const dx = pointer.x - screenX;
       const dy = pointer.y - screenY;
       const distance = Math.max(1, Math.hypot(dx, dy));
-      const influence =
-        pointer.inside && !reduceMotion ? clamp(1 - distance / brace.radiusPx, 0, 1) : 0;
-      const repelX = influence > 0 ? (-dx / distance) * influence * 0.22 : 0;
-      const repelY = influence > 0 ? (-dy / distance) * influence * 0.13 : 0;
-      const hoverZ = influence * 0.18;
+      const rawInfluence = pointer.inside && !reduceMotion
+        ? clamp(1 - distance / brace.radiusPx, 0, 1)
+        : 0;
+      // smoothstep for sharper "touch" feel at close range
+      const influence = rawInfluence * rawInfluence * (3 - 2 * rawInfluence);
+
+      // Track proximity — only used to keep inProximity state current.
+      brace.inProximity = rawInfluence > 0;
+
+      // Hover: only a gentle tilt toward the cursor — no position repel.
+      // Position-based repel reacts to every micro-movement and looks jittery.
+      // Rotation is smoother because it pivots around center without displacing it.
+      const normX = distance > 1 ? dx / distance : 0;
+      const normY = distance > 1 ? dy / distance : 0;
+      const tiltX =  normY * influence * 0.22;
+      const tiltY = -normX * influence * 0.28;
+      const hoverZ = influence * 0.30;
+
       const idleX = reduceMotion ? 0 : Math.sin(time * 0.00052 + brace.phase) * 0.06;
       const idleY = reduceMotion ? 0 : Math.cos(time * 0.0009 + brace.phase) * 0.18;
       const idleZ = reduceMotion ? 0 : Math.sin(time * 0.00068 + brace.phase) * 0.08;
@@ -410,27 +390,40 @@ export function initWarumWirTechBraces({ reduceMotion = false } = {}) {
       const idleRotY = reduceMotion ? 0 : Math.sin(time * 0.00048 + brace.phase) * 0.06;
       const idleRotZ = reduceMotion ? 0 : Math.cos(time * 0.00052 + brace.phase) * 0.05;
 
-      brace.hoverOffset.x = damp(brace.hoverOffset.x, repelX, 0.11, delta);
-      brace.hoverOffset.y = damp(brace.hoverOffset.y, repelY, 0.11, delta);
-      brace.hoverOffset.z = damp(brace.hoverOffset.z, hoverZ, 0.11, delta);
+      // Position: only Z push toward camera, no X/Y displacement
+      brace.hoverOffset.x = damp(brace.hoverOffset.x, 0,      0.06, delta);
+      brace.hoverOffset.y = damp(brace.hoverOffset.y, 0,      0.06, delta);
+      brace.hoverOffset.z = damp(brace.hoverOffset.z, hoverZ, 0.08, delta);
 
-      brace.hoverRotation.x = damp(brace.hoverRotation.x, repelY * 0.7, 0.1, delta);
-      brace.hoverRotation.y = damp(brace.hoverRotation.y, repelX * 0.95, 0.1, delta);
-      brace.hoverRotation.z = damp(brace.hoverRotation.z, -repelX * 0.8, 0.1, delta);
+      // Rotation: tilt follows cursor direction, slow enough to glide smoothly
+      brace.hoverRotation.x = damp(brace.hoverRotation.x, tiltX, 0.06, delta);
+      brace.hoverRotation.y = damp(brace.hoverRotation.y, tiltY, 0.06, delta);
+      brace.hoverRotation.z = damp(brace.hoverRotation.z, 0,     0.06, delta);
 
-      brace.impulseVelocity.multiplyScalar(Math.pow(0.88, delta));
-      brace.impulseAngularVelocity.multiplyScalar(Math.pow(0.82, delta));
-      brace.impulseOffset.addScaledVector(brace.impulseVelocity, delta);
-      brace.impulseRotation.addScaledVector(brace.impulseAngularVelocity, delta);
-      brace.impulseOffset.multiplyScalar(Math.pow(0.76, delta));
-      brace.impulseRotation.multiplyScalar(Math.pow(0.74, delta));
+      // Spring-damper physics — slightly underdamped for a natural settle
+      // F = -k*x - d*v
+      const SK = 0.07;   // spring stiffness
+      const SD = 0.42;   // high damping — settles fast, no oscillation
+      const RK = 0.08;
+      const RD = 0.44;
 
-      brace.impulseOffset.x = clamp(brace.impulseOffset.x, -0.62, 0.62);
-      brace.impulseOffset.y = clamp(brace.impulseOffset.y, -0.4, 0.4);
-      brace.impulseOffset.z = clamp(brace.impulseOffset.z, -0.36, 0.36);
-      brace.impulseRotation.x = clamp(brace.impulseRotation.x, -0.42, 0.42);
-      brace.impulseRotation.y = clamp(brace.impulseRotation.y, -0.68, 0.68);
-      brace.impulseRotation.z = clamp(brace.impulseRotation.z, -0.34, 0.34);
+      const axes = ["x", "y", "z"];
+      for (const ax of axes) {
+        const tAcc = -SK * brace.impulseOffset[ax] - SD * brace.impulseVelocity[ax];
+        brace.impulseVelocity[ax] += tAcc * delta;
+        brace.impulseOffset[ax]   += brace.impulseVelocity[ax] * delta;
+
+        const rAcc = -RK * brace.impulseRotation[ax] - RD * brace.impulseAngularVelocity[ax];
+        brace.impulseAngularVelocity[ax] += rAcc * delta;
+        brace.impulseRotation[ax]        += brace.impulseAngularVelocity[ax] * delta;
+      }
+
+      brace.impulseOffset.x = clamp(brace.impulseOffset.x, -0.88, 0.88);
+      brace.impulseOffset.y = clamp(brace.impulseOffset.y, -0.56, 0.56);
+      brace.impulseOffset.z = clamp(brace.impulseOffset.z, -0.50, 0.50);
+      brace.impulseRotation.x = clamp(brace.impulseRotation.x, -0.58, 0.58);
+      brace.impulseRotation.y = clamp(brace.impulseRotation.y, -0.92, 0.92);
+      brace.impulseRotation.z = clamp(brace.impulseRotation.z, -0.46, 0.46);
 
       brace.anchor.position.set(
         brace.basePosition.x + idleX + brace.hoverOffset.x + brace.impulseOffset.x,

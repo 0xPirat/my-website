@@ -4,11 +4,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arbeiten | buildIT</title>
+  <title>Unsere Arbeiten | buildIT – Relaunch, Positionierung & Webdesign</title>
   <meta name="description"
-    content="Arbeiten von buildIT: Case Study, System, Ergebnis und die Art, wie ein hochwertiger Relaunch konkret gefuehrt wird." />
+    content="Referenzprojekte von buildIT: Wie wir Websites von austauschbar auf überzeugend bringen – mit klarer Ausgangslage, präzisem Eingriff und sichtbarem Ergebnis für jeden Kunden." />
+  <meta property="og:title" content="Arbeiten | buildIT – Websites mit Vorher und Nachher" />
+  <meta property="og:description" content="Keine Showcase-Galerie. buildIT zeigt echte Projektlogik: was das Problem war, was wir geändert haben und was für den Kunden besser geworden ist." />
+  <meta property="og:image" content="public/media/images/motionwarumwir.png" />
+  <meta property="og:type" content="website" />
   <script src="src/scripts/file-protocol-guard.js"></script>
-  <link rel="stylesheet" href="src/styles/main.css" />
+  <link rel="preload" href="assets/fonts/Satoshi-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="src/styles/base.css">
+  <link rel="stylesheet" href="src/styles/layout.css">
+  <link rel="stylesheet" href="src/styles/components/cards.css">
+  <link rel="stylesheet" href="src/styles/pages/legal.css">
 </head>
 
 <body class="is-scene-subpage is-scene-subpage--arbeit" data-scene-page="arbeit">
@@ -116,7 +125,14 @@
 
       <div class="gallery-grid">
         <article class="gallery-card page-card glass-card" data-reveal>
-          <video src="public/media/video/technik-welt.mp4" autoplay muted loop playsinline></video>
+          <video
+            src="public/media/video/technik-welt.mp4"
+            poster="public/media/images/website-building.jpeg"
+            autoplay muted loop playsinline
+            aria-label="Hintergrundvideo: Technik-Welt Animation"
+          >
+            <p class="video-fallback-text">Dein Browser unterstützt keine HTML5-Videos. Bitte aktualisiere deinen Browser.</p>
+          </video>
         </article>
         <article class="gallery-card page-card glass-card" data-reveal>
           <img src="public/media/images/auge.png" alt="Visual einer Build-Ansicht" />
@@ -138,7 +154,7 @@
 
   <footer class="scene-subpage-footer" data-scene-subpage-footer></footer>
 
-  <script type="module" src="src/scripts/app.js?v=32"></script>
+  <script type="module" src="src/scripts/app.js?v=36"></script>
 </body>
 
 </html>

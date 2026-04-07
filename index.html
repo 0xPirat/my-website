@@ -4,11 +4,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>buildIT | Landingpage mit vier Szenen</title>
+  <title>buildIT – Websites, die führen. Klar positioniert. Hochwertig gebaut.</title>
   <meta name="description"
-    content="Landingpage mit vier Bereichen, identischer Szenen-Animation und austauschbaren Hintergrundwelten fuer buildIT." />
+    content="buildIT entwickelt Websites, die nicht nur gut aussehen, sondern klar positionieren, Vertrauen aufbauen und qualifizierte Anfragen erzeugen. Strategie, Design und Entwicklung aus einer Hand." />
+  <meta property="og:title" content="buildIT – Websites mit Richtung" />
+  <meta property="og:description" content="Wir bauen Websites, die klar führen, Vertrauen erzeugen und messbar mehr qualifizierte Anfragen bringen. Positionierung, Design und Entwicklung aus einer Hand." />
+  <meta property="og:image" content="public/media/images/motionwarumwir.png" />
+  <meta property="og:type" content="website" />
   <script src="src/scripts/file-protocol-guard.js"></script>
-  <link rel="stylesheet" href="src/styles/main.css?v=8" />
+  <link rel="preload" href="assets/fonts/Satoshi-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="src/styles/base.css">
+  <link rel="stylesheet" href="src/styles/layout.css">
+  <link rel="stylesheet" href="src/styles/components/hero.css">
+  <link rel="stylesheet" href="src/styles/components/cards.css">
+  <link rel="stylesheet" href="src/styles/pages/index.css">
 </head>
 
 <body class="is-landing-reference" id="landing-top">
@@ -70,8 +80,9 @@
               <p class="eyebrow scene-copy__eyebrow">Warum wir</p>
               <h1 id="scene-title-warum-wir">KLARHEIT, BEVOR DAS CHAOS WIEDER ZUGREIFT.</h1>
               <p class="scene-copy__text">
-                Beispieltext fuer diesen Abschnitt. Hier kannst du spaeter deine kurze Erklaerung
-                manuell einfuegen.
+                Wir bauen keine austauschbaren Websites. buildIT denkt Positionierung, Dramaturgie
+                und Frontend als eine Einheit – damit dein Auftritt nicht nur gut aussieht, sondern
+                klar führt und messbar mehr Vertrauen erzeugt.
               </p>
             </article>
 
@@ -79,8 +90,9 @@
               <p class="eyebrow scene-copy__eyebrow">Schablonen</p>
               <h1 id="scene-title-schablonen">SCHABLONEN MIT RICHTUNG STATT BAUKASTEN-GEFUEHL.</h1>
               <p class="scene-copy__text">
-                Beispieltext fuer diesen Abschnitt. Hier kannst du spaeter deine kurze Erklaerung
-                manuell einfuegen.
+                Unsere Schablonen sind keine Baukästen mit freien Feldern. Jede Vorlage ist
+                konzeptionell durchdacht: klare Struktur, starkes Messaging und ein Designsystem,
+                das sich deinem Angebot anpasst – nicht umgekehrt.
               </p>
             </article>
 
@@ -88,8 +100,9 @@
               <p class="eyebrow scene-copy__eyebrow">Arbeiten</p>
               <h1 id="scene-title-arbeit">ARBEIT, DIE NICHT STILLSTEHT, SONDERN NACH VORN ZIEHT.</h1>
               <p class="scene-copy__text">
-                Beispieltext fuer diesen Abschnitt. Hier kannst du spaeter deine kurze Erklaerung
-                manuell einfuegen.
+                Jedes Projekt, das wir abliefern, hat ein klares Vorher und ein sichtbares Nachher.
+                Kein generischer Relaunch – sondern ein Auftritt, der schärfer positioniert,
+                stärker führt und qualifiziertere Anfragen anzieht.
               </p>
             </article>
 
@@ -97,8 +110,9 @@
               <p class="eyebrow scene-copy__eyebrow">Unser Team</p>
               <h1 id="scene-title-unser-team">RUHIGE KOEPFE. PRAEZISE BEWEGUNG. EIN KLARES TEAM.</h1>
               <p class="scene-copy__text">
-                Beispieltext fuer diesen Abschnitt. Hier kannst du spaeter deine kurze Erklaerung
-                manuell einfuegen.
+                buildIT ist ein kompaktes Team aus Strategen, Designern und Entwicklern, die nicht
+                nacheinander arbeiten, sondern als eine Einheit denken. Kurze Wege, klare
+                Entscheidungen – vom ersten Briefing bis zum fertigen Build.
               </p>
             </article>
           </div>
@@ -192,7 +206,7 @@
       }
     }
   </script>
-  <script type="module" src="src/scripts/app.js?v=32"></script>
+  <script type="module" src="src/scripts/app.js?v=36"></script>
 </body>
 
 </html>

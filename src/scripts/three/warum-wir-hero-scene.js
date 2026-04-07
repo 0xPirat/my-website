@@ -4,13 +4,28 @@ import {
   disposeObject,
   loadNightSkyBustTexture,
 } from "./night-sky-world.js";
-
-function clamp(value, min, max) {
-  return Math.min(max, Math.max(min, value));
-}
+import { clamp } from "./three-utils.js";
 
 function easeOutCubic(value) {
   return 1 - (1 - value) ** 3;
+}
+
+function showSceneFallback(container, label = "3D-Szene nicht verfügbar") {
+  if (!container || container.querySelector(".scene-error-fallback")) {
+    return;
+  }
+
+  if (getComputedStyle(container).position === "static") {
+    container.style.position = "relative";
+  }
+
+  const el = document.createElement("div");
+  el.className = "scene-error-fallback";
+  el.setAttribute("aria-label", label);
+  el.innerHTML =
+    `<span class="scene-error-fallback__icon" aria-hidden="true">◇</span>` +
+    `<span>${label}</span>`;
+  container.appendChild(el);
 }
 
 export function initWarumWirHeroScene({ reduceMotion = false } = {}) {
@@ -35,6 +50,7 @@ export function initWarumWirHeroScene({ reduceMotion = false } = {}) {
     });
   } catch (error) {
     root.dataset.sceneState = "unavailable";
+    showSceneFallback(canvasHost, "3D-Hintergrund nicht verfügbar");
     return;
   }
 

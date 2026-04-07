@@ -1,33 +1,5 @@
 import * as THREE from "/public/vendor/three/three.module.js";
-
-function disposeMaterial(material) {
-  if (!material) {
-    return;
-  }
-
-  if (Array.isArray(material)) {
-    material.forEach(disposeMaterial);
-    return;
-  }
-
-  material.dispose();
-}
-
-function disposeObject(object) {
-  if (!object) {
-    return;
-  }
-
-  object.traverse((child) => {
-    if (child.geometry) {
-      child.geometry.dispose();
-    }
-
-    if (child.material) {
-      disposeMaterial(child.material);
-    }
-  });
-}
+import { disposeObject3D as disposeObject } from "./three-utils.js";
 
 function createSurfaceMaterial({
   color,
@@ -564,6 +536,24 @@ function createRoom() {
   return { room: scene, motionTargets };
 }
 
+function showSceneFallback(container, label = "3D-Szene nicht verfügbar") {
+  if (!container || container.querySelector(".scene-error-fallback")) {
+    return;
+  }
+
+  if (getComputedStyle(container).position === "static") {
+    container.style.position = "relative";
+  }
+
+  const el = document.createElement("div");
+  el.className = "scene-error-fallback";
+  el.setAttribute("aria-label", label);
+  el.innerHTML =
+    `<span class="scene-error-fallback__icon" aria-hidden="true">◇</span>` +
+    `<span>${label}</span>`;
+  container.appendChild(el);
+}
+
 export function initSchablonenRoomScene({ reduceMotion = false } = {}) {
   if (typeof window === "undefined") {
     return;
@@ -587,6 +577,7 @@ export function initSchablonenRoomScene({ reduceMotion = false } = {}) {
     });
   } catch (error) {
     background.dataset.sceneState = "unavailable";
+    showSceneFallback(background, "3D-Szene nicht verfügbar");
     return;
   }
 
