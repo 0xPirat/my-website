@@ -66,7 +66,20 @@ initLandingSceneScroll({ reduceMotion });
 if (webGLAvailable) {
   initLandingWarumWirScene({ reduceMotion });
   initWarumWirTechBraces({ reduceMotion });
-  initSchablonenRoomScene({ reduceMotion });
+
+  // Schablonen-Szene lazy initialisieren: WebGL-Renderer erst wenn sichtbar
+  const schablonenBg = document.querySelector('[data-scene-bg="schablonen"]');
+  if (schablonenBg) {
+    let schablonenInited = false;
+    const observer = new MutationObserver(() => {
+      if (schablonenBg.classList.contains("is-active") && !schablonenInited) {
+        schablonenInited = true;
+        observer.disconnect();
+        initSchablonenRoomScene({ reduceMotion });
+      }
+    });
+    observer.observe(schablonenBg, { attributes: true, attributeFilter: ["class"] });
+  }
 }
 
 initWarumWirFlow({ reduceMotion });
