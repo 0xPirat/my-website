@@ -210,14 +210,22 @@ function drawCell(ctx, cell, centerX, centerY, radius, reveal, time) {
 
   ctx.save();
   ctx.globalAlpha = reveal * cell.opacity;
-  ctx.shadowColor = palette.glow;
-  ctx.shadowBlur = radius * (0.35 + reveal * 0.42);
+
+  // Glow als radialer Gradient statt ctx.shadowBlur — shadowBlur erzwingt einen
+  // teuren Blur-Pass pro Zelle auf der GPU. Ein einfacher radialer Gradient
+  // sieht nahezu gleich aus, ist aber nur eine normale fill-Operation.
+  const glowRadius = radius * (1.5 + reveal * 0.7);
+  const glowGradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, glowRadius);
+  glowGradient.addColorStop(0, palette.glow);
+  glowGradient.addColorStop(1, "rgba(0,0,0,0)");
+  ctx.fillStyle = glowGradient;
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, glowRadius, 0, Math.PI * 2);
+  ctx.fill();
 
   tracePolygon(ctx, points);
   ctx.fillStyle = shellGradient;
   ctx.fill();
-
-  ctx.shadowBlur = 0;
 
   drawBand(
     ctx,

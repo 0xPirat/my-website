@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Disallow: /archive/
+Disallow: /source-assets/
+Disallow: /docs/
+Disallow: /background/
+Disallow: /pictures/
+Disallow: /node_modules/
+
+Sitemap: https://DEINE-DOMAIN.de/sitemap.xml
