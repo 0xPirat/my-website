@@ -87,7 +87,9 @@ export function initWarumWirFlow({ reduceMotion = false } = {}) {
   video.preload = "auto";
 
   const resizeCanvas = () => {
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    // DPR auf 1 begrenzt: auf Retina würden sonst 4× so viele Pixel gerendert,
+    // bei einem Vollbild-Canvas mit schweren Filteroperationen nicht vertretbar.
+    const dpr = 1;
 
     width = window.innerWidth;
     height = window.innerHeight;
@@ -300,28 +302,45 @@ export function initWarumWirFlow({ reduceMotion = false } = {}) {
     const distance = Math.hypot(endStamp.x - startStamp.x, endStamp.y - startStamp.y);
     if (distance < 0.5) return;
 
-    const auraBlur = reduceMotion ? 0 : TRAIL_AURA_BLUR + MELT_MASK_BLUR * meltProgress * 0.55;
-    const coreBlur = reduceMotion ? 0 : TRAIL_CORE_BLUR + MELT_MASK_BLUR * meltProgress * 0.25;
-
+    // ctx.filter blur entfernt — stattdessen zwei Striche mit abnehmender
+    // Opacity und zunehmender Breite. Sieht nahezu gleich aus, ist aber ein
+    // einfacher fill-Aufruf ohne GPU-Filter-Pass.
     targetCtx.save();
     targetCtx.lineCap = "round";
     targetCtx.lineJoin = "round";
 
-    targetCtx.filter = auraBlur > 0 ? `blur(${auraBlur}px)` : "none";
-    targetCtx.strokeStyle = `rgba(0, 0, 0, ${0.14 + strength * 0.18})`;
-    targetCtx.lineWidth = lerp(TRAIL_AURA_WIDTH * 0.84, TRAIL_AURA_WIDTH, strength);
+    const auraAlpha = 0.14 + strength * 0.18;
+    const auraWidth = lerp(TRAIL_AURA_WIDTH * 0.84, TRAIL_AURA_WIDTH, strength);
+    targetCtx.strokeStyle = `rgba(0, 0, 0, ${auraAlpha * 0.45})`;
+    targetCtx.lineWidth = auraWidth * (1.6 + meltProgress * 0.8);
     targetCtx.beginPath();
     targetCtx.moveTo(startStamp.x, startStamp.y);
     targetCtx.lineTo(endStamp.x, endStamp.y);
     targetCtx.stroke();
 
-    targetCtx.filter = coreBlur > 0 ? `blur(${coreBlur}px)` : "none";
-    targetCtx.strokeStyle = `rgba(0, 0, 0, ${0.26 + strength * 0.34})`;
-    targetCtx.lineWidth = lerp(TRAIL_CORE_WIDTH * 0.9, TRAIL_CORE_WIDTH, strength);
+    targetCtx.strokeStyle = `rgba(0, 0, 0, ${auraAlpha})`;
+    targetCtx.lineWidth = auraWidth;
     targetCtx.beginPath();
     targetCtx.moveTo(startStamp.x, startStamp.y);
     targetCtx.lineTo(endStamp.x, endStamp.y);
     targetCtx.stroke();
+
+    const coreAlpha = 0.26 + strength * 0.34;
+    const coreWidth = lerp(TRAIL_CORE_WIDTH * 0.9, TRAIL_CORE_WIDTH, strength);
+    targetCtx.strokeStyle = `rgba(0, 0, 0, ${coreAlpha * 0.55})`;
+    targetCtx.lineWidth = coreWidth * (1.4 + meltProgress * 0.6);
+    targetCtx.beginPath();
+    targetCtx.moveTo(startStamp.x, startStamp.y);
+    targetCtx.lineTo(endStamp.x, endStamp.y);
+    targetCtx.stroke();
+
+    targetCtx.strokeStyle = `rgba(0, 0, 0, ${coreAlpha})`;
+    targetCtx.lineWidth = coreWidth;
+    targetCtx.beginPath();
+    targetCtx.moveTo(startStamp.x, startStamp.y);
+    targetCtx.lineTo(endStamp.x, endStamp.y);
+    targetCtx.stroke();
+
     targetCtx.restore();
   };
 
@@ -329,10 +348,11 @@ export function initWarumWirFlow({ reduceMotion = false } = {}) {
     const orbit = reduceMotion ? stamp.seed : time * 0.88 + stamp.seed;
     const auraRadius = BASE_AURA_RADIUS + strength * AURA_RADIUS_GAIN;
     const baseAlpha = 0.18 + strength * 0.52;
-    const blurPx = reduceMotion ? 0 : lerp(ACTIVE_MASK_BLUR, MELT_MASK_BLUR, meltProgress);
 
+    // ctx.filter blur entfernt — drawBlobAura erzeugt bereits weiche Kanten
+    // durch radiale Gradienten. Der zusätzliche Blur-Pass pro Stamp war der
+    // teuerste Einzelaufruf in der gesamten Render-Schleife.
     targetCtx.save();
-    targetCtx.filter = blurPx > 0 ? `blur(${blurPx}px)` : "none";
 
     drawBlobAura(targetCtx, {
       x: stamp.x,
